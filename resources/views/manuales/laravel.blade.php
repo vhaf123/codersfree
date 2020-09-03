@@ -68,7 +68,7 @@
         }
 
         .container{
-            max-width: 1300px;
+            max-width: 1200px;
         }
 
     </style>

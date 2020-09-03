@@ -16,13 +16,15 @@ class CreateTemasTable extends Migration
         Schema::create('temas', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger('capitulo_id')->unsigned();
-            $table->foreign('capitulo_id')
-                    ->references('id')->on('capitulos')
+            $table->unsignedBigInteger('manual_id')->unsigned();
+            $table->foreign('manual_id')
+                    ->references('id')->on('manuales')
                     ->onDelete('cascade');
 
+            $table->text('capitulo')->nullable();
+            
             $table->string('name');
-            $table->text('body')->nullable();
+            $table->text('body');
             
             $table->string('slug')->unique();
             $table->text('title');

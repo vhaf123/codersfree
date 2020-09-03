@@ -25,3 +25,10 @@ Route::resource('requisitos', 'RequisitoController')->only('store', 'update', 'd
 Route::resource('modulos', 'ModuloController')->names('admin.modulos');
 
 Route::resource('videos', 'VideoController')->except('index', 'create', 'show')->names('admin.videos');
+
+
+//Manual
+
+Route::get('manual-laravel-7', 'LaravelController@index')->name('admin.laravel');
+
+Route::resource('temas', 'TemaController')->names('admin.temas');

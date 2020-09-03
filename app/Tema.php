@@ -13,8 +13,8 @@ class Tema extends Model
         return 'slug';
     }
 
-    public function capitulo()
+    public function manual()
     {
-        return $this->belongsTo('App\Capitulo');
+        return $this->belongsTo('App\Manual');
     }
 }

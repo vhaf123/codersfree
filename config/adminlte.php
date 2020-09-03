@@ -296,7 +296,7 @@ return [
 
         [
             'text' => 'Manual de Laravel',
-            'url'  => 'admin/settings',
+            'route'  => 'admin.laravel',
             'icon' => 'fab fa-fw fa-laravel',
             'icon_color' => 'danger',
         ],
