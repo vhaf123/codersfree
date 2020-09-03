@@ -12,6 +12,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+
+        Storage::deleteDirectory('home');
+        Storage::makeDirectory('home');
         
         $this->call(PermissionSeeder::class);
         $this->call(RoleSeeder::class);

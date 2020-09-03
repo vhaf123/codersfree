@@ -7,8 +7,6 @@ use Faker\Generator as Faker;
 use Illuminate\Support\Facades\Storage;
 
 $factory->define(Home::class, function (Faker $faker) {
-    Storage::deleteDirectory('home');
-    Storage::makeDirectory('home');
 
     return [
         'portada_picture' => 'home/' . $faker->image('public/storage/home',1280,960, null, false),
