@@ -1,0 +1,27 @@
+.header_principal{
+    z-index: 900;
+    position: sticky;
+    top: 0;
+
+    @media (min-width: 768px) {
+        top: -60px;
+    }
+}
+
+.cabecera{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.boton-menu{
+    font-size: 20px;
+    color: #636b6f;
+}
+
+.user-img{
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+}

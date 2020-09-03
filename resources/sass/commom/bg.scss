@@ -1,0 +1,10 @@
+.bg-oscuro{
+    background-color: $oscuro;
+}
+
+.bg-degradado{
+    background: linear-gradient(90deg, $purple, $red)!important;
+    & i{
+        font-size: 32px;
+    }
+}
