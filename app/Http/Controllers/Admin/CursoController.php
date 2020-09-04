@@ -55,7 +55,7 @@ class CursoController extends Controller
         $path = storage_path() . "\app\public\cursos/" . $nombre;
 
         Image::make($request->file('picture'))
-                ->resize(1280, null, function ($constraint) {
+                ->resize(640, null, function ($constraint) {
                     $constraint->aspectRatio();
                 })
                 ->encode('png')
@@ -102,7 +102,7 @@ class CursoController extends Controller
             $path = storage_path() . "\app\public\cursos/" . $nombre;
 
             Image::make($request->file('picture'))
-                ->resize(1280, null, function ($constraint) {
+                ->resize(640, null, function ($constraint) {
                     $constraint->aspectRatio();
                 })
                 ->encode('png')

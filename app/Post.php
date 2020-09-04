@@ -37,6 +37,11 @@ class Post extends Model
         return $this->belongsTo('App\Blogger');
     }
 
+    public function categoria()
+    {
+        return $this->belongsTo('App\Categoria');
+    }
+
     /*Relación muchos a muchos*/
 
     public function tags()

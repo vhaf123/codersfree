@@ -31,8 +31,8 @@
                     </li>
 
                      {{-- Blog --}}
-                    <li class="nav-item {{setActive('blog.*')}}">
-                      <a class="nav-link" href="{{-- {{route('blog.index')}} --}}">
+                    <li class="nav-item {{setActive('posts.*')}}">
+                      <a class="nav-link" href="{{route('posts.index')}}">
                         <i class="fas fa-blog"></i>
                         Blog
                       </a>

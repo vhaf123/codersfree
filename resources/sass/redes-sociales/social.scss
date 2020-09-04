@@ -1,0 +1,47 @@
+@media (max-width: 767px){
+    .social{
+        position: fixed;
+        left: 0;
+        bottom: 0px;
+        z-index: 1000;
+        width: 100vw;
+    }
+
+    .social ul{
+        display: flex;
+        margin-bottom: 0!important;
+    }
+
+    .social ul li{
+        width: 100%;
+    }
+    
+    .social ul li a{
+        display: block;
+        
+        text-align: center;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        color: white;
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 768px){
+    .social{
+        position: fixed;
+        left: 0;
+        top: 200px;
+        z-index: 1000;
+    }
+
+    .social ul li a{
+        text-align: center;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        display: block;
+        color: white;
+        font-size: 20px;
+        width: 50px;
+    }
+}

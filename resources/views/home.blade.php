@@ -96,27 +96,27 @@
                         <img src="{{Storage::url($home->contenido_picture_1)}}" alt="">
                     </a>
 
-                    <h1 class="text-center mt-3 h4"><a href="{{route('cursos.index')}}" class="text-decoration-none">{{$home->contenido_title_1}}</a></h1>
+                    <h1 class="text-center mt-3 h4"><a href="{{route('cursos.index')}}" class="text-decoration-none text-secondary">{{$home->contenido_title_1}}</a></h1>
                     <p>{{$home->contenido_text_1}}</p>
                 </article>
 
                 <article class="col-12 col-sm-6 col-md-4 col-lg-3 mb-5">
                     
-                    <div class="card-img">
+                    <a class="card-img" href="{{route('laravel.index')}}">
                         <img src="{{Storage::url($home->contenido_picture_2)}}" alt="">
-                    </div>
+                    </a>
 
-                    <h4 class="text-center mt-3">{{$home->contenido_title_2}}</h4>
+                    <h4 class="text-center mt-3"><a href="{{route('laravel.index')}}" class="text-decoration-none text-secondary">{{$home->contenido_title_2}}</a></h4>
                     <p>{{$home->contenido_text_2}}</p>
                 </article>
                 
                 <article class="col-12 col-sm-6 col-md-4 col-lg-3 mb-5">
                     
-                    <div class="card-img">
+                    <a class="card-img" href="{{route('posts.index')}}">
                         <img src="{{Storage::url($home->contenido_picture_3)}}" alt="">
-                    </div>
+                    </a>
 
-                    <h4 class="text-center mt-3">{{$home->contenido_title_3}}</h4>
+                    <h4 class="text-center mt-3"><a href="{{route('posts.index')}}" class="text-decoration-none text-secondary">{{$home->contenido_title_3}}</a></h4>
                     <p>{{$home->contenido_text_3}}</p>
                 </article>
 
@@ -263,14 +263,14 @@
 
                         <div class="col-12 col-lg-4 mb-3 mb-lg-0">
                             <div class="border border-white py-2">
-                                <h1 class="text-white text-center mb-1">{{-- {{$manuales_publicados}} --}}17</h1>
+                                <h1 class="text-white text-center mb-1">{{$manuales_publicados}}</h1>
                                 <p class="text-white text-center m-0">Manuales</p>
                             </div>
                         </div>
 
                         <div class="col-12 col-lg-4">
                             <div class="border border-white py-2">
-                                <h1 class="text-white text-center mb-1">{{-- {{$posts_publicados}} --}}32</h1>
+                                <h1 class="text-white text-center mb-1">{{$posts_publicados}}</h1>
                                 <p class="text-white text-center m-0">Artículos</p>
                             </div>
                         </div>
@@ -362,7 +362,23 @@
                     }
                 });
             },
-            
+            select: function(event, ui){
+                //alert(ui.item.category);
+                
+                switch (ui.item.category) {
+                    case 'Cursos':
+                        $(location).attr('href','cursos/' + ui.item.slug);
+                        break;
+
+                    case 'Posts':
+                        $(location).attr('href','blog/' + ui.item.slug);
+                        break;
+
+                    default:
+                        break;
+                }
+                
+            }
         });
     </script>
 @endsection

@@ -29,6 +29,8 @@
 
 @section('content')
 
+    @include('layouts.partials.social-bar')
+
     {{-- Portada --}}
     <section class="portada">
         <img src="{{Storage::url($page_curso->portada_picture)}}" alt="">
@@ -178,6 +180,11 @@
                         response(data)
                     }
                 });
+            },
+            select: function(event, ui){
+                
+                $(location).attr('href','cursos/' + ui.item.slug);
+                
             }
         });
     </script>

@@ -16,7 +16,8 @@ class ManualSeeder extends Seeder
         $manual =  Manual::Create([
             'categoria_id' => 1,
             'name' => 'Documentación de Laravel 7 en español',
-            'descripcion' => "Hemos traducido la documentación oficial de Laravel 7, para ayudarte en tu proceso de aprendizaje"
+            'descripcion' => "Hemos traducido la documentación oficial de Laravel 7, para ayudarte en tu proceso de aprendizaje",
+            'status' => 2
         ]);
 
         factory(Tema::class, 25)->create([

@@ -12,6 +12,8 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
-        factory(Post::class, 16)->create();
+        factory(Post::class, 16)->create()->each(function($post){
+            $post->tags()->attach(1);
+        });
     }
 }

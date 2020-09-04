@@ -17,6 +17,9 @@ Route::get('manual-laravel-7', 'LaravelController@index')->name('laravel.index')
 Route::get('manual-laravel-7/{tema}', 'LaravelController@tema')->name('laravel.tema');
 
 
+Route::resource('blog', 'PostController')->parameters(['blog' => 'post'])->names('posts');
+Route::resource('tags', 'TagController');
+
 //File manager
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();

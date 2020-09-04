@@ -51,6 +51,9 @@
 @endsection
 
 @section('content')
+
+    @include('layouts.partials.social-bar')
+
     {{-- Jumbotron --}}
     <section class="bg-oscuro mb-4">
         <div class="container">
@@ -442,6 +445,8 @@
                                     </div>
                                 </div>
 
+                                <p class="mb-0"><i class="fas fa-star text-warning"></i> {{$similar->rating}}</p>
+
                             </div>
                         </article>
 
@@ -452,44 +457,6 @@
             </div>
         </div>
     </div>
-
-    {{-- <main>
-
-        <div class="container">
-            <div class="row">
-
-                <div class="col-12 mb-4 col-lg-4 order-lg-2">
-
-                    <section>
-                        @include('cursos.partials.matricula')
-                    </section>
-    
-                    <section class="mt-4">
-                        @include('cursos.partials.requisitos')
-                    </section>
-                    
-                </div>
-
-                <div class="col-12 col-lg-8">
-
-                    <section class="mb-4">
-                        @include('cursos.partials.metas')
-                    </section>
-    
-                    <section class="mb-5">
-                        @include('cursos.partials.temario')
-                    </section>
-
-                    <section>
-                        @include('cursos.partials.reviews')
-                    </section>
-
-                </div>
-
-                
-            </div>
-        </div>
-    </main> --}}
 
 @endsection
 

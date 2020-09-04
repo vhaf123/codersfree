@@ -6,17 +6,17 @@
 @section('css')
     <style>
 
-        .indice > li > h1{
+        .indice li{
             padding-left: 38px;
         }
 
-        .subindice{
+        .indice{
             position: relative;
             list-style-type: none;
             padding-left: 0;
         }
 
-        .subindice:before{
+        .indice:before{
             content: ' ';
             background: #d4d9df;
             display: inline-block;
@@ -28,11 +28,11 @@
             z-index: 400;
         }
 
-        .subindice li{
+        .indice li{
             position: relative;
         }
 
-        .subindice li:before{
+        .indice li:before{
             content: ' ';
             background: white;
             display: inline-block;
@@ -46,17 +46,12 @@
             z-index: 400;
         }
 
-        .subindice .active:before{
+        .indice .active:before{
             border: 3px solid #facf5a!important;
         }
 
-        .subindice li:not(:first-of-type){
+        .indice li:not(:first-of-type){
             margin: 10px 0;
-        }
-
-        .subindice li h2{
-            padding-left: 38px;
-            
         }
 
         .principal p, .principal li{
@@ -76,6 +71,8 @@
 
 @section('content')
 
+    @include('layouts.partials.social-bar')
+
     <div class="container mt-4">
         <div class="row">
 
@@ -93,33 +90,23 @@
                 <div class="card shadow">
                     <div class="card-body">
 
+                        <h1 class="h3 text-center mb-3">LARAVEL 7</h1>
+
                         <ul class="list-unstyled indice">
-            
-                            @foreach ($laravel->capitulos as $capitulo)
-                                <li>
-                                    <h1 class="h6 font-weight-bold">{{$capitulo->name}}</h1>
-                
-                                    <ul class="subindice">
-                                        
-                
-                                        @foreach ($capitulo->temas as $tema)
-                                        
-                                            <li @if ($actual->id == $tema->id) class="active" @endif>
-                                                <h2 class = "h6">
-                                                    <a href="{{route('laravel.tema', $tema)}}" class="text-secondary text-decoration-none">
-                                                        {{$tema->name}}
-                                                    </a>
-                                                </h2>
-                                            </li>
-                                            
-                                        @endforeach
-                                        
-                                    </ul>
-                
+
+                            @foreach ($laravel->temas as $tema)
+
+                                <li @if ($actual->id == $tema->id) class="active" @endif>
+                                    <h2 class = "h6">
+                                        <a href="{{route('laravel.tema', $tema)}}" class="text-secondary text-decoration-none">
+                                            {{$tema->name}}
+                                        </a>
+                                    </h2>
                                 </li>
-                
-                                
+
                             @endforeach
+
+                         
                         </ul>
 
                     </div>

@@ -1,0 +1,139 @@
+.portada{
+
+    margin-top: 0px;
+
+    position: relative;
+    width: 100%;
+
+    /* (1:1) */
+    &:before{
+        content: '';
+        display: block;
+        padding-top: 100%;
+    }
+
+    & .container{
+        height: 100%;
+
+        & .row{
+            height: 100%;
+        }
+    }
+
+    /* (16:9) */
+    @media (min-width: 576px) { 
+        &:before{
+            content: '';
+            display: block;
+            padding-top: 56.25%;
+        }
+    }
+
+    /* (2:1) */
+    @media (min-width: 768px) { 
+        &:before{
+            content: '';
+            display: block;
+            padding-top: 50%
+        }
+    }
+
+    /* (3:1)*/
+    @media (min-width: 992px) { 
+        &:before{
+            content: '';
+            display: block;
+            padding-top: 38%
+        }
+    }
+}
+
+.portada > img{
+    position: absolute;
+    /* z-index: 100; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+}
+
+.portada .portada-text{
+    position: absolute;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.1);
+}
+
+
+//Portada post
+
+.portada-post{
+    position: relative;
+    width: 100%;
+
+    /* (1:1) */
+    &:before{
+        content: '';
+        display: block;
+        padding-top: 100%;
+    }
+
+    & .container{
+        height: 100%;
+
+        & .row{
+            height: 100%;
+        }
+    }
+
+    /* (16:9) */
+    @media (min-width: 576px) { 
+        &:before{
+            content: '';
+            display: block;
+            padding-top: 56.25%;
+        }
+    }
+
+    /* (2:1) */
+    @media (min-width: 768px) { 
+        &:before{
+            content: '';
+            display: block;
+            padding-top: 50%
+        }
+    }
+
+    /* (3:1)*/
+    @media (min-width: 992px) { 
+        &:before{
+            content: '';
+            display: block;
+            padding-top: 33%
+        }
+    }
+}
+
+.portada-post > img{
+    position: absolute;
+    /* z-index: 100; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+}
+
+.portada-post .portada-post-text{
+    position: absolute;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.1);
+}

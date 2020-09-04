@@ -15,17 +15,71 @@
 @stop
 
 @section('content')
-    <div class="card">
-        <div class="card-body">
-          {!! Form::open(['route' => 'admin.temas.store']) !!}
-            {!! Form::hidden('manual_id', $manual->id, ['class' => 'form-control']) !!}
+  <div class="row">
+    <div class="col-10 offset-1">
+  
+      {!! Form::open(['route' => 'admin.temas.store']) !!}
+        {!! Form::hidden('manual_id', $manual->id, ['class' => 'form-control']) !!}
+        <div class="card shadow">
 
-            @include('admin.temas.partials.form')
+          <div class="card-body">
+
+            <div class="row">
+
+              {{-- Capitulo --}}
+              <div class="col-6">
+                <div class="form-group">
+                  {!! Form::label('capitulo', 'Capítulo(opcional)') !!}
+                  {!! Form::text('capitulo', null, ['class' => 'form-control']) !!}
+                </div>
+              </div>
+
+              {{-- Nombre --}}
+              <div class="col-6">
+                <div class="form-group">
+                  {!! Form::label('name', 'Nombre') !!}
+                  {!! Form::text('name', null, ['class' => 'form-control' . ( $errors->has('name') ? ' is-invalid' : '' )]) !!}
+                  @error('name')
+                      <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                      </span>
+                  @enderror
+                </div>
+              </div>
+
+              {{-- Descripcion --}}
+              <div class="col-12">
+                <div class="form-group">
+                  {!! Form::label('description', 'Descripción') !!}
+                  {!! Form::textarea('description', null, ['class' => 'form-control' . ( $errors->has('description') ? ' is-invalid' : '' ), 'rows' => '4']) !!}
+                  @error('description')
+                      <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                      </span>
+                  @enderror
+                </div>
+              </div>
+            </div>
+                
+            <div class="form-group">
+                {!! Form::label('body', 'Contenido') !!}
+                {!! Form::textarea('body', null, ['class' => 'form-control my-editor'  . ( $errors->has('body') ? ' is-invalid' : '' )]) !!}
+                @error('body')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
 
             {!! Form::submit('Agregar Tema', ['class' => 'btn btn-primary btn-block']) !!}
-          {!! Form::close() !!}
+          
+          </div>
         </div>
+
+      {!! Form::close() !!}
+
     </div>
+  </div>
 @endsection
 
 @section('js')

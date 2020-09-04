@@ -23,4 +23,9 @@ class Categoria extends Model
     {
         return $this->hasMany('App\Curso');
     }
+
+    public function posts()
+    {
+        return $this->hasMany('App\Post');
+    }
 }

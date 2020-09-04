@@ -15,7 +15,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-
         $home = Home::first();
         return view('admin.home.index',compact('home'));
     }
@@ -74,7 +73,7 @@ class HomeController extends Controller
             $path = storage_path() . "\app\public\home/" . $nombre;
 
             Image::make($request->file('portada_picture'))
-                ->resize(300, null, function ($constraint) {
+                ->resize(1280, null, function ($constraint) {
                     $constraint->aspectRatio();
                 })
                 ->encode('png')
@@ -161,7 +160,7 @@ class HomeController extends Controller
             $path = storage_path() . "\app\public\home/" . $nombre;
 
             Image::make($request->file('nuevo_contenido_picture'))
-                ->resize(300, null, function ($constraint) {
+                ->resize(640, null, function ($constraint) {
                     $constraint->aspectRatio();
                 })
                 ->encode('png')

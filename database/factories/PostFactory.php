@@ -9,16 +9,14 @@ use Illuminate\Support\Facades\Storage;
 
 $factory->define(Post::class, function (Faker $faker) {
 
-    Storage::deleteDirectory('posts');
-    Storage::makeDirectory('posts');
-
     return [
         'blogger_id' => \App\Blogger::all()->random()->id,
         'categoria_id' => \App\Categoria::all()->random()->id,
         'name' => $faker->sentence,
         'descripcion' => $faker->text(200),
         'body' => $faker->text(10000),
-        'picture' => 'posts/' . $faker->image('public/storage/cursos',1280,960, null, false),
+        'picture' => 'posts/' . $faker->image('public/storage/posts',1280,960, null, false),
+        /* 'picture' => $faker->imageUrl(1280, 960), */
         'status' => 2,
     ];
 });

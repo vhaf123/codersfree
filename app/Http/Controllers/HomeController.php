@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Curso;
 
 use App\Home;
+use App\Manual;
+use App\Post;
 
 class HomeController extends Controller
 {
@@ -14,10 +16,7 @@ class HomeController extends Controller
      *
      * @return void
      */
-   /*  public function __construct()
-    {
-        $this->middleware('auth');
-    } */
+ 
 
     /**
      * Show the application dashboard.
@@ -34,8 +33,10 @@ class HomeController extends Controller
                 ->get();
 
         $cursos_publicados = Curso::where('status', '!=', 1)->count();
+        $manuales_publicados = Manual::where('status', '!=', 1)->count();
+        $posts_publicados = Post::where('status', '!=', 1)->count();
 
         $home = Home::first();
-        return view('home', compact('home', 'cursos', 'cursos_publicados'));
+        return view('home', compact('home', 'cursos', 'cursos_publicados', 'manuales_publicados', 'posts_publicados'));
     }
 }
