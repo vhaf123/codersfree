@@ -528,5 +528,16 @@ return [
                 ],
             ],
         ],
+
+        'Tinymce' => [
+            'active' => false,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/tinymce/tinymce.min.js',
+                ],
+            ],
+        ],
     ],
 ];

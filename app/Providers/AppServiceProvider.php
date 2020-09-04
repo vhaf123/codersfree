@@ -9,12 +9,14 @@ use App\Curso;
 use App\Video;
 use App\Manual;
 use App\Tema;
+use App\Post;
 use App\Observers\UserObserver;
 use App\Observers\CategoriaObserver;
 use App\Observers\CursoObserver;
 use App\Observers\VideoObserver;
 use App\Observers\ManualObserver;
 use App\Observers\TemaObserver;
+use App\Observers\PostObserver;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -41,5 +43,6 @@ class AppServiceProvider extends ServiceProvider
         Video::observe(VideoObserver::class);
         Manual::observe(ManualObserver::class);
         Tema::observe(TemaObserver::class);
+        Post::observe(PostObserver::class);
     }
 }

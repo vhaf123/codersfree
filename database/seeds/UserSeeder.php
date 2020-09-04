@@ -1,5 +1,6 @@
 <?php
 
+use App\Blogger;
 use Illuminate\Database\Seeder;
 use App\User;
 use App\Profesor;
@@ -24,6 +25,9 @@ class UserSeeder extends Seeder
             'user_id' => $user->id
         ]);
        
+        Blogger::create([
+            'user_id' => $user->id
+        ]);
 
         $user->assignRoles('Admin');
 

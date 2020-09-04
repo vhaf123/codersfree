@@ -36,7 +36,7 @@
                                     <td>{{$tema->id}}</td>
                                     <td>{{$tema->name}}</td>
                                     <td>
-                                        <a href="" class="btn btn-primary btn-sm">Editar</a>
+                                        <a href="{{route('admin.temas.edit', $tema)}}" class="btn btn-primary btn-sm">Editar</a>
                                     </td>
                                     <td>
                                         {!! Form::open() !!}

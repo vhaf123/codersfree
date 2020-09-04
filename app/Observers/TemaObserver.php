@@ -13,4 +13,9 @@ class TemaObserver
         $tema->title = $tema->name;
         $tema->slug = $slug;
     }
+
+    public function updating(Tema $tema){
+        $slug = Str::slug($tema->name, '-');
+        $tema->slug = $slug;
+    }
 }

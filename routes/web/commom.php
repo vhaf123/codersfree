@@ -15,3 +15,9 @@ Route::post('course-status/cursado', 'CourseStatusController@cursado')->name('co
 
 Route::get('manual-laravel-7', 'LaravelController@index')->name('laravel.index');
 Route::get('manual-laravel-7/{tema}', 'LaravelController@tema')->name('laravel.tema');
+
+
+//File manager
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});

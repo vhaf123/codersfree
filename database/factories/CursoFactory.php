@@ -7,11 +7,16 @@ use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
+Storage::deleteDirectory('cursos');
+Storage::makeDirectory('cursos');
+
 $factory->define(Curso::class, function (Faker $faker) {
 
     $name = $faker->sentence;
     $descripcion = $faker->paragraph;
     $slug = Str::slug($name, '-');
+
+    
 
     return [
         'name' => $faker->sentence,

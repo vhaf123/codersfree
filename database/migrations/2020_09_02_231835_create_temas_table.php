@@ -30,6 +30,10 @@ class CreateTemasTable extends Migration
             $table->text('title');
             $table->text('description');
 
+            $table->enum('status', [
+                \App\Tema::BORRADOR, \App\Tema::PUBLICADO
+            ])->nullable()->default(\App\Tema::BORRADOR);
+
             $table->timestamps();
         });
     }
