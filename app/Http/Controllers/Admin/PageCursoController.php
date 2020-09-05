@@ -40,21 +40,9 @@ class PageCursoController extends Controller
 
         if($request->file('portada_picture')){
 
-            if($curso->portada_picture){
-                Storage::delete($curso->portada_picture);
-            }
-
-            $nombre = Str::random(30) . '.png';
-            $path = storage_path() . "\app\public\cursos/" . $nombre;
-
-            Image::make($request->file('portada_picture'))
-                ->resize(1280, null, function ($constraint) {
-                    $constraint->aspectRatio();
-                })
-                ->encode('png')
-                ->save($path);
-
-            $resultado['portada_picture'] = 'cursos/' . $nombre;
+            Storage::delete($curso->portada_picture);
+            $resultado['portada_picture'] = Storage::put('cursos', $request->file('portada_picture'));
+           
         }
 
         $curso->update($resultado);
