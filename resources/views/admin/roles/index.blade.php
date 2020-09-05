@@ -1,15 +1,16 @@
 @extends('adminlte::page')
 
-@section('title', 'Tags')
+@section('title', 'Roles')
 
 @section('plugins.Datatables', true)
 
 @section('content_header')
     <div class="d-flex align-items-center justify-content-between">
-
-        <h1>Etiquetas</h1>
+        <h1>Roles</h1>
         
-        <a href="{{route('admin.tags.create')}}" class="btn btn-primary">Crear etiqueta</a>
+        @can('admin.cursos.create')
+            <a href="{{route('admin.roles.create')}}" class="btn btn-primary">Crear rol</a>
+        @endcan
 
     </div>
 @stop
@@ -17,38 +18,35 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <table class="table table-striped" id="tags">
+            <table class="table table-striped" id="roles">
                 <thead>
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
-                        <th>Background</th>
+                        <th>Descripción</th>
                         <th width = '10px'></th>
                         <th width = '10px'></th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    @foreach ($tags as $tag)
-                    <tr>
-                        <td>{{$tag->id}}</td>
-                        <td>{{$tag->name}}</td>
-                        <td>
-                            <span class="badge {{$tag->background}}">
-                                {{$tag->background}}
-                            </span>
-                        </td>
-                       
-                        <td>
-                            <a href="{{route('admin.tags.edit', $tag)}}" class="btn btn-primary btn-sm">Editar</a>
-                        </td>
-                        <td>
-                            {!! Form::open(['route' => ['admin.tags.destroy', $tag], 'method' => 'delete', 'class' => 'formulario-eliminar']) !!}
-                                {!! Form::submit('Eliminar', ['class' => 'btn btn-danger btn-sm']) !!}
-                            {!! Form::close() !!}
-                        </td>
-                    </tr>
-                    @endforeach
+                    @foreach ($roles as $role)
+                        <tr>
+                            <td>{{$role->id}}</td>
+                            <td>{{$role->name}}</td>
+                            <td>{{$role->description}}</td>
+
+                            <td>
+                                <a href="{{route('admin.roles.edit', $role)}}" class="btn btn-success btn-sm">Editar</a>
+                            </td>
+
+                            <td>
+                                {!! Form::open(['route' => ['admin.roles.destroy', $role], 'method' => 'delete', 'class' => 'formulario-eliminar']) !!}
+                                    {!! Form::submit('Eliminar', ['class' => 'btn btn-danger btn-sm']) !!}
+                                {!! Form::close() !!}
+                            </td>
+                        </tr>
+                    @endforeach    
                 </tbody>
             </table>
         </div>
@@ -58,7 +56,7 @@
 @section('js')
     <script>
         /* Datatable */
-        $('#tags').DataTable({
+        $('#roles').DataTable({
             responsive: true,
             autoWidth: false,
 
@@ -86,7 +84,7 @@
             }
         });
 
-        //Confirmar eliminar
+        /* Confirmar eliminar */
         $('.formulario-eliminar').submit(function(e){
             e.preventDefault();
 

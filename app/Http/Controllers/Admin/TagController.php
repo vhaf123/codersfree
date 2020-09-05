@@ -37,7 +37,14 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => "required|unique:tags",
+            'background' => 'required'
+        ]);
+
+        Tag::create($request->all());
+        
+        return redirect()->route('admin.tags.index')->with('info', 'etiqueta creada con éxito');
     }
 
     /**
@@ -71,7 +78,16 @@ class TagController extends Controller
      */
     public function update(Request $request, Tag $tag)
     {
-        //
+        $request->validate([
+            'name' => "required|unique:tags,name,$tag->id",
+            'background' => 'required'
+        ]);
+
+        $tag->update($request->all());
+
+        return redirect()->route('admin.tags.edit', $tag)->with('info', 'Etiqueta actualizada con éxito');
+
+        //return back()->with('info', 'Etiqueta actualizada con éxito');
     }
 
     /**

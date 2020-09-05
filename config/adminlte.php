@@ -258,11 +258,6 @@ return [
         /* sidebar */
 
         [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
-        [
             'text' => 'Dashboard',
             'url'  => 'admin',
             'icon' => 'fas fa-fw fa-home',
@@ -276,6 +271,14 @@ return [
             'route' => 'admin.users.index',
             'can' => 'admin.users.index'
         ],
+
+        [
+            'text' => 'Roles de usuarios',
+            'icon' => 'fas fa-fw fa-users-cog',
+            'route' => 'admin.roles.index',
+            'can' => 'admin.users.index'
+        ],
+        
         [
             'text'        => 'Categorias',
             'route'         => 'admin.categorias.index',
@@ -320,10 +323,18 @@ return [
             'icon' => 'fas fa-fw fa-clipboard',
         ],
 
+        ['header' => 'SECCION ETIQUETAS'],
+
         [
-            'text' => 'Lista de tags',
+            'text' => 'Lista de etiquetas',
             'route'  => 'admin.tags.index',
             'icon' => 'fas fa-fw fa-tags',
+        ],
+
+        [
+            'text' => 'Nueva etiqueta',
+            'route'  => 'admin.tags.create',
+            'icon' => 'fas fa-fw fa-tag',
         ],
        
     ],

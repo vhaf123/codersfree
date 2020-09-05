@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Posts')
 
 @section('plugins.Tinymce', true)
 

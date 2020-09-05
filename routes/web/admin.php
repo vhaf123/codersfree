@@ -10,6 +10,8 @@ Route::resource('page/posts', 'PagePostController')->parameters(['posts' => 'pag
 
 Route::resource('users', 'UserController')->except('create', 'store')->names('admin.users');
 
+Route::resource('roles', 'RoleController')->names('admin.roles');
+
 Route::resource('categorias', 'CategoriaController')->names('admin.categorias');
 
 Route::resource('cursos', 'CursoController')->except('show')->names('admin.cursos');
