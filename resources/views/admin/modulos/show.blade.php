@@ -21,6 +21,15 @@
 
 @section('content')
     <div class="row">
+
+        @if ($errors->any())
+            <div class="col-12">
+                <div class="alert alert-danger" role="alert">
+                    <strong>Ha ocurrido uno o más errores, solucionelo para poder continuar</strong>
+                </div>
+            </div>
+        @endif
+
         <div class="col-8">
             <div class="card">
                 <div class="card-body">

@@ -17,11 +17,10 @@ class VideoController extends Controller
 
     public function store(Request $request)
     {
-
         $request->validate([
-            'name' => 'required',
-            'descripcion' => 'required',
-            'url' => 'required'
+            'name' => ['required'],
+            'descripcion' => ['required'],
+            'url' => ['required', 'regex:%^ (?:https?://)? (?:www\.)? (?: youtu\.be/ | youtube\.com (?: /embed/ | /v/ | /watch\?v= ) ) ([\w-]{10,12}) $%x']
         ]);
 
         Video::create($request->all());

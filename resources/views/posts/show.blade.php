@@ -2,7 +2,8 @@
 @section('title'){{$post->title}}@endsection
 
 @section('css')
-    <link rel="stylesheet" href="{{asset('plugins/highlight/styles/agate.css')}}">
+<link rel="stylesheet"
+href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/default.min.css">
 
     <style>
     

@@ -11,9 +11,9 @@ use App\Profesor;
 
 class UserController extends Controller
 {
-    
     public function __construct(){
         $this->middleware(['can:admin.users.index'])->only('index');
+        $this->middleware(['can:admin.users.edit'])->only('edit', 'update');
     }
 
     public function index()

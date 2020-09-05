@@ -287,7 +287,10 @@ return [
             'label_color' => 'success',
             'can' => 'admin.categorias.index'
         ],
-        ['header' => 'SECCION CURSOS'],
+        [
+            'header' => 'SECCION CURSOS',
+            'can'     => 'admin.cursos.index'
+        ],
         [
             'text'    => 'Todos los cursos',
             'route'   => 'admin.cursos.index',
@@ -302,39 +305,53 @@ return [
             'can'     => 'admin.cursos.create'
         ],
 
-        ['header' => 'SECCION MANUALES'],
+        [
+            'header' => 'SECCION MANUALES',
+            'can'     => 'admin.laravel'
+        ],
 
         [
             'text' => 'Manual de Laravel',
             'route'  => 'admin.laravel',
             'icon' => 'fab fa-fw fa-laravel',
+            'can'     => 'admin.laravel'
         ],
 
-        ['header' => 'SECCION BLOG'],
+        [
+            'header' => 'SECCION BLOG',
+            'can' => 'admin.posts.index'
+        ],
 
         [
             'text' => 'Lista de posts',
             'route'  => 'admin.posts.index',
             'icon' => 'fas fa-fw fa-blog',
+            'can' => 'admin.posts.index'
         ],
         [
             'text' => 'Crear nuevo post',
             'route'  => 'admin.posts.create',
             'icon' => 'fas fa-fw fa-clipboard',
+            'can' => 'admin.posts.create'
         ],
 
-        ['header' => 'SECCION ETIQUETAS'],
+        [
+            'header' => 'SECCION ETIQUETAS',
+            'can' => 'admin.tags.index'
+        ],
 
         [
             'text' => 'Lista de etiquetas',
             'route'  => 'admin.tags.index',
             'icon' => 'fas fa-fw fa-tags',
+            'can' => 'admin.tags.index'
         ],
 
         [
             'text' => 'Nueva etiqueta',
             'route'  => 'admin.tags.create',
             'icon' => 'fas fa-fw fa-tag',
+            'can' => 'admin.tags.create'
         ],
        
     ],

@@ -1,5 +1,6 @@
 <?php
 
+use Caffeinated\Shinobi\Models\Permission;
 use Illuminate\Database\Seeder;
 
 use Caffeinated\Shinobi\Models\Role;
@@ -13,7 +14,19 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
-        Role::create([
+        $admin = Role::create([
+                'name' => 'Admin',
+                'slug' => 'Admin',
+                'description' => 'Acceso total',
+            ]);
+
+        $permissions = Permission::all();
+
+        foreach ($permissions as $permission) {
+            $admin->permissions()->attach($permission->id);
+        }
+
+        /* Role::create([
             'name' => 'Admin',
             'slug' => 'Admin',
             'description' => 'Acceso total',
@@ -23,6 +36,6 @@ class RoleSeeder extends Seeder
             'name' => 'Profesor',
             'slug' => 'Profesor',
             'description' => 'Puede crear cursos, editarlos y eliminarlos',
-        ])->permissions()->attach([1, 8, 9, 10, 11]);
+        ])->permissions()->attach([1, 8, 9, 10, 11]); */
     }
 }

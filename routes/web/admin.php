@@ -6,7 +6,7 @@ Route::get('/', 'AdminController@index')->name('admin.index');
 
 Route::resource('home', 'HomeController')->only('index', 'update')->names('admin.home');
 Route::resource('page/cursos', 'PageCursoController')->only('index', 'update')->names('page.cursos');
-Route::resource('page/posts', 'PagePostController')->parameters(['posts' => 'page_post'])->names('page.posts');
+Route::resource('page/posts', 'PagePostController')->only('index', 'update')->parameters(['posts' => 'page_post'])->names('page.posts');
 
 Route::resource('users', 'UserController')->except('create', 'store')->names('admin.users');
 

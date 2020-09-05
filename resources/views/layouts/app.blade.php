@@ -85,11 +85,22 @@
     </nav> --}}
 
     @include('layouts.partials.header')
+    @include('layouts.partials.sidebar')
     
     @yield('content')
 
+    @include('layouts.partials.footer')
+
      <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    
+
+    @if (session('info'))
+        <script>
+            toastr.info("{{session('info')}}")
+        </script>
+    @endif
+
     @yield('js')
 
 </body>

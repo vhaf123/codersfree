@@ -148,7 +148,7 @@
                 @empty
                     <div class="col-12">
                         <div class="alert alert-primary text-center" role="alert">
-                            <strong>Aquí aparecera una lista de cursos cuando suba alguno</strong>
+                            <strong>Ningún curso coincide con los criterios de busqueda</strong>
                         </div>
                     </div>
                 @endforelse

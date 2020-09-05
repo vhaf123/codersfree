@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class LaravelController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware(['can:admin.laravel'])->only('index');
+    }
+
     public function index(){
 
         $manual = Manual::first();

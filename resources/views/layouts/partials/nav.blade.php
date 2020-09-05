@@ -40,7 +40,7 @@
 
                     {{-- Contáctanos --}}
                     <li class="nav-item {{setActive('contactanos.index')}}">
-                      <a class="nav-link" href="{{-- {{route('contactanos.index')}} --}}">
+                      <a class="nav-link" href="{{route('contactanos.index')}}">
                         <i class="far fa-address-card"></i>
                         Contáctanos
                       </a>

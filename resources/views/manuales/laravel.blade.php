@@ -81,7 +81,7 @@
                     <ol class="breadcrumb">
                       <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
                       <li class="breadcrumb-item"><a href="{{route('laravel.index')}}">Manual de Laravel</a></li>
-                      <li class="breadcrumb-item active" aria-current="page">{{$actual->name}}</li>
+                      <li class="breadcrumb-item active" aria-current="page">@if ($actual) {{$actual->name}} @else No hay ningún tema agregado @endif</li>
                     </ol>
                 </nav>
             </div>
@@ -94,8 +94,7 @@
 
                         <ul class="list-unstyled indice">
 
-                            @foreach ($laravel->temas as $tema)
-
+                            @forelse ($laravel->temas as $tema)
                                 <li @if ($actual->id == $tema->id) class="active" @endif>
                                     <h2 class = "h6">
                                         <a href="{{route('laravel.tema', $tema)}}" class="text-secondary text-decoration-none">
@@ -103,9 +102,12 @@
                                         </a>
                                     </h2>
                                 </li>
-
-                            @endforeach
-
+                            @empty
+                                <div class="alert alert-danger" role="alert">
+                                    <strong>No se ha agregado ningún tema aún</strong>
+                                </div>                                
+                            @endforelse
+                            
                          
                         </ul>
 
@@ -117,9 +119,16 @@
                 <div class="card">
                     <div class="card-body text-secondary">
 
-                        <h1>{{$actual->name}}</h1>
-                        <p>{{$actual->descripcion}}</p>
-                        {!!$actual->body!!}
+                        @if ($actual)
+                            <h1>{{$actual->name}}</h1>
+                            <p>{{$actual->descripcion}}</p>
+                            {!!$actual->body!!}
+
+                        @else
+                            <div class="alert alert-danger" role="alert">
+                                <strong>No se ha agregado ningún tema aún</strong>
+                            </div>
+                        @endif
 
                     </div>
                 </div>

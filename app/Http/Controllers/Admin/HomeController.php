@@ -13,6 +13,11 @@ use Illuminate\Support\Str;
 
 class HomeController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware(['can:admin.home']);
+    }
+
     public function index()
     {
         $home = Home::first();
@@ -167,6 +172,23 @@ class HomeController extends Controller
                 ->save($path);
 
             $resultado['nuevo_contenido_picture'] = 'home/' . $nombre;
+        }
+
+        if($request->file('informacion_picture')){
+
+            Storage::delete($home->informacion_picture);
+            
+            $nombre = Str::random(30) . '.png';
+            $path = storage_path() . "\app\public\home/" . $nombre;
+
+            Image::make($request->file('informacion_picture'))
+                ->resize(640, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })
+                ->encode('png')
+                ->save($path);
+
+            $resultado['informacion_picture'] = 'home/' . $nombre;
         }
         
         $home->update($resultado);

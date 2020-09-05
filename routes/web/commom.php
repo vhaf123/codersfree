@@ -20,6 +20,17 @@ Route::get('manual-laravel-7/{tema}', 'LaravelController@tema')->name('laravel.t
 Route::resource('blog', 'PostController')->parameters(['blog' => 'post'])->names('posts');
 Route::resource('tags', 'TagController');
 
+Route::get('contactanos', 'ContactanosController@index')->name('contactanos.index');
+Route::post('contactanos/mensaje', 'ContactanosController@mensaje')->name('contactanos.mensaje');
+
+Route::get('politicas', function () {
+    return view('politicas');
+})->name('politicas');
+
+Route::get('terminos', function () {
+    return view('terminos');
+})->name('terminos');
+
 //File manager
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();

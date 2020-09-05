@@ -564,13 +564,18 @@
                                     </div>
                                 </div>
         
-                                <div class="col-12 col-md-6">
-                                    @if ($home->informacion_picture)
-                                        <img class="img-fluid" src="{{Storage::url($home->informacion_picture)}}" alt="">
-                                    @else
-                                        <img class="img-fluid" src="{{asset('img/home/Recurso 2.png')}}" alt="">
-                                    @endif
+                                <div class="col-12 col-md-6 portada">
+
+                                    <img class="img-fluid" src="{{Storage::url($home->informacion_picture)}}" alt="" id="informacion_picture">
+
+                                    <div class="portada-text">
+                                        <div class="nueva-imagen p-2">
+                                            <input type='file' name="informacion_picture" onchange="cambiarImagen(event, '#informacion_picture')" />
+                                        </div>
+                                    </div>
                                 </div>
+
+
                             </div>
                         </div>
                     </div>

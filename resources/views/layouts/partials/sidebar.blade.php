@@ -22,10 +22,17 @@
                 </a>
             </li>
 
-            <li class="{{setActive('manuales.*')}}">
-                <a href="{{route('manuales.index')}}">
+            <li class="{{setActive('laravel.*')}}">
+                <a href="{{route('laravel.index')}}">
                     <i class="fas fa-chalkboard-teacher"></i>
-                    Manuales
+                    Manual de Laravel
+                </a>
+            </li>
+
+            <li>
+                <a href="{{route('posts.index')}}">
+                    <i class="fas fa-blog"></i>
+                    Blog
                 </a>
             </li>
 
@@ -37,22 +44,6 @@
                 </a>
             </li>
     
-
-
-            <li>
-                <a href="{{route('blog.index')}}">
-                    <i class="fas fa-blog"></i>
-                    Blog
-                </a>
-            </li>
-
-            {{-- <li>
-                <a href="{{route('cursos.index')}}">
-                    <i class="fab fa-discourse"></i>
-                    Cursos
-                </a>
-            </li>
-             --}}
     
         </ul>
 

@@ -13,6 +13,12 @@ use App\PageCurso;
 
 class PageCursoController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware(['can:page.cursos']);
+    }
+
+
     public function index(){
         $page_curso = PageCurso::first();
         return view('admin/pageCursos/index', compact('page_curso'));

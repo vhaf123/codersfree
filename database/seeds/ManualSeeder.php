@@ -20,8 +20,8 @@ class ManualSeeder extends Seeder
             'status' => 2
         ]);
 
-        factory(Tema::class, 25)->create([
+        /* factory(Tema::class, 25)->create([
             'manual_id' => $manual->id
-        ]);
+        ]); */
     }
 }
