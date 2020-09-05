@@ -39,7 +39,7 @@
                                         <a href="{{route('admin.temas.edit', $tema)}}" class="btn btn-primary btn-sm">Editar</a>
                                     </td>
                                     <td>
-                                        {!! Form::open() !!}
+                                        {!! Form::open(['route' => ['admin.temas.destroy', $tema], 'method' => 'delete', 'class' => 'formulario-eliminar']) !!}
                                             {!! Form::submit('Eliminar', ['class' => 'btn btn-danger btn-sm']) !!}
                                         {!! Form::close() !!}
                                     </td>

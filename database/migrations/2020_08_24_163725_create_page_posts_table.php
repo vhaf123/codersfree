@@ -15,6 +15,16 @@ class CreatePagePostsTable extends Migration
     {
         Schema::create('page_posts', function (Blueprint $table) {
             $table->id();
+
+            $table->string('meta_title');
+            $table->text('meta_description');
+
+            $table->string('picture');
+            
+            $table->string('portada_title');
+            $table->text('portada_text');
+            $table->string('portada_search');
+
             $table->timestamps();
         });
     }

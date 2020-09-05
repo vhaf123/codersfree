@@ -3,11 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Manual;
-use App\Tema;
 use Illuminate\Http\Request;
 
-class TemaController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +14,7 @@ class TemaController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -26,9 +24,7 @@ class TemaController extends Controller
      */
     public function create()
     {
-        $manual = Manual::first();
-
-        return view('admin.temas.create', compact('manual'));
+        //
     }
 
     /**
@@ -39,17 +35,7 @@ class TemaController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'manual_id' => 'required',
-            'name' => 'required|unique:temas',
-            'body' => 'required',
-            'description' => 'required'
-        ]);
-
-        $tema = Tema::create($request->all());
-        
-        return redirect()->route('admin.temas.edit', $tema)->with('info', 'El tema se creó con éxito');
-        
+        //
     }
 
     /**
@@ -69,10 +55,9 @@ class TemaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tema $tema)
+    public function edit($id)
     {
-        $manual = Manual::first();
-        return view('admin.temas.edit', compact('tema', 'manual'));
+        //
     }
 
     /**
@@ -82,17 +67,9 @@ class TemaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tema $tema)
+    public function update(Request $request, $id)
     {
-        $request->validate([
-            'manual_id' => 'required',
-            'name' => "required|unique:temas,name,$tema->id",
-            'body' => 'required',
-            'description' => 'required'
-        ]);
-
-        $tema->update($request->all());
-        return redirect()->route('admin.temas.edit', $tema)->with('info', 'El tema se actualizó con éxito');
+        //
     }
 
     /**
@@ -101,10 +78,8 @@ class TemaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tema $tema)
+    public function destroy($id)
     {
-        $tema->delete();
-
-        return redirect()->route('admin.laravel')->with('eliminar', 'Tema eliminado con éxito');
+        //
     }
 }

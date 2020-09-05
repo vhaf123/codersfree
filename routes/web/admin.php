@@ -6,7 +6,7 @@ Route::get('/', 'AdminController@index')->name('admin.index');
 
 Route::resource('home', 'HomeController')->only('index', 'update')->names('admin.home');
 Route::resource('page/cursos', 'PageCursoController')->only('index', 'update')->names('page.cursos');
-
+Route::resource('page/posts', 'PagePostController')->parameters(['posts' => 'page_post'])->names('page.posts');
 
 Route::resource('users', 'UserController')->except('create', 'store')->names('admin.users');
 
@@ -32,3 +32,7 @@ Route::resource('videos', 'VideoController')->except('index', 'create', 'show')-
 Route::get('manual-laravel-7', 'LaravelController@index')->name('admin.laravel');
 
 Route::resource('temas', 'TemaController')->names('admin.temas');
+
+//Blog
+
+Route::resource('posts', 'PostController')->names('admin.posts');

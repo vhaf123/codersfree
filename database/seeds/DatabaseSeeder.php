@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call(HomeSeeder::class);
         $this->call(PageCursoSeeder::class);
+        $this->call(PagePostSeeder::class);
         $this->call(CategoriaSeeder::class);
         $this->call(NivelSeeder::class);
         $this->call(CursoSeeder::class);

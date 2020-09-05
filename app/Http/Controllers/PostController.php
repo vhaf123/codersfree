@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\PagePost;
 use App\Post;
 use Illuminate\Http\Request;
 
@@ -12,10 +13,15 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
 
+        $search = $request->get('search');
+
+        $pagePost = PagePost::first();
+
         $posts =Post::where('status', '!=', 1)
+                    ->search($search)
                     ->latest()
                     ->paginate(9);
 
@@ -24,7 +30,7 @@ class PostController extends Controller
                     ->get()
                     ->take(6);
 
-        return view('posts.index', compact('posts', 'populares'));
+        return view('posts.index', compact('pagePost','posts', 'populares'));
     }
 
     /**

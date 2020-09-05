@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Cursos')
+@section('title', 'Blog')
 
 @section('css')
     
@@ -20,7 +20,7 @@
 @endsection
 
 @section('content')
-    {!! Form::model($page_curso, ['route' => ['page.cursos.update', $page_curso], 'method' => 'put', 'files' => 'true']) !!}
+    {!! Form::model($page_post, ['route' => ['page.posts.update', $page_post], 'method' => 'put', 'files' => 'true']) !!}
 
         <div class="row pb-3">
             @if ($errors->any())
@@ -39,11 +39,11 @@
 
                         <div class="portada">
 
-                            <img src="{{Storage::url($page_curso->portada_picture)}}" alt="Portada" id="portada_picture">
+                            <img src="{{Storage::url($page_post->picture)}}" alt="Portada" id="portada_picture">
                             
                             <div class="portada-text">
                                 <div class="nueva-imagen p-2">
-                                    <input type='file' name="portada_picture" onchange="cambiarImagen(event, '#portada_picture')" />
+                                    <input type='file' name="picture" onchange="cambiarImagen(event, '#portada_picture')" />
                                 </div>
                             </div>
                         </div>

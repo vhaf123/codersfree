@@ -242,6 +242,11 @@ return [
             'route' => 'page.cursos.index',
             'topnav' => true,
         ],
+        [
+            'text' => 'Blog',
+            'route' => 'page.posts.index',
+            'topnav' => true,
+        ],
         /* [
             'text' => 'Busqueda',
             'search' => true,
@@ -279,7 +284,7 @@ return [
             'label_color' => 'success',
             'can' => 'admin.categorias.index'
         ],
-        ['header' => 'SECCION DE LA PÁGINA'],
+        ['header' => 'SECCION CURSOS'],
         [
             'text'    => 'Todos los cursos',
             'route'   => 'admin.cursos.index',
@@ -294,14 +299,18 @@ return [
             'can'     => 'admin.cursos.create'
         ],
 
+        ['header' => 'SECCION MANUALES'],
+
         [
             'text' => 'Manual de Laravel',
             'route'  => 'admin.laravel',
             'icon' => 'fab fa-fw fa-laravel',
-            'icon_color' => 'danger',
         ],
+
+        ['header' => 'SECCION ARTICULOS'],
+
         [
-            'text' => 'change_password',
+            'text' => 'Lista de posts',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],

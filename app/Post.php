@@ -19,6 +19,13 @@ class Post extends Model
         return 'slug';
     }
 
+    /* Query Scopes */
+    public function scopeSearch($query, $search){
+        if($search){
+            return $query->where('name', 'LIKE', '%' . $search . '%');
+        }
+    }
+
     /* Atributos */
     public function getEstadoAttribute(){
 

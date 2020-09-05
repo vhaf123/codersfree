@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
-@section('title', '▷ Blog de programación e informática')
+@section('title', $pagePost->meta_title)
+
+@section('description', $pagePost->meta_description)
 
 @section('css')
     <link rel="stylesheet" href="{{asset('vendor/jquery-ui/jquery-ui.min.css')}}">
@@ -14,11 +16,11 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-10 col-lg-8 py-5">
-                    <h1 class="text-white text-md-center h2">¿Estás buscando algún artículo en particular?</h1>
-                    <p class="text-white text-md-center">Encuentra los mejores post de programación y desarrollo web. Nuevo contenido todos los días.</p>
-                    <form action="">
+                    <h1 class="text-white text-md-center h2">{{$pagePost->portada_title}}</h1>
+                    <p class="text-white text-md-center">{{$pagePost->portada_text}}</p>
+                    <form action="{{route('posts.index')}}">
                         <div class="input-group">
-                            <input type="text" class="form-control" id= "search" placeholder="Escribe el nombre del artículo" aria-label="" aria-describedby="basic-addon1">
+                            <input name='search' type="text" class="form-control" id= "search" placeholder="{{$pagePost->portada_search}}" aria-label="" aria-describedby="basic-addon1">
                             <div class="input-group-append">
                                 <button class="btn btn-danger" type="button">Buscar</button>
                             </div>
@@ -52,7 +54,11 @@
                         @endif
                         
                     @empty
-                        
+                        <div class="col-12">
+                            <div class="alert alert-primary text-center" role="alert">
+                                <strong>No se ha encontrado ningún artículo con esa descripción</strong>
+                            </div>
+                        </div>
                     @endforelse
 
                 </div>
@@ -76,7 +82,7 @@
             </div>
         </div>
 
-        {{$posts->links()}}
+        {{$posts->appends(request()->all())->links()}}
     </main>
 @endsection
 
