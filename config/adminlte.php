@@ -307,67 +307,25 @@ return [
             'icon' => 'fab fa-fw fa-laravel',
         ],
 
-        ['header' => 'SECCION ARTICULOS'],
+        ['header' => 'SECCION BLOG'],
 
         [
             'text' => 'Lista de posts',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'route'  => 'admin.posts.index',
+            'icon' => 'fas fa-fw fa-blog',
         ],
         [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
+            'text' => 'Crear nuevo post',
+            'route'  => 'admin.posts.create',
+            'icon' => 'fas fa-fw fa-clipboard',
         ],
-        ['header' => 'labels'],
+
         [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
+            'text' => 'Lista de tags',
+            'route'  => 'admin.tags.index',
+            'icon' => 'fas fa-fw fa-tags',
         ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
+       
     ],
 
     /*

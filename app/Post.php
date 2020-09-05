@@ -10,7 +10,7 @@ class Post extends Model
     const PUBLICADO = 2;
 
     protected $fillable = [
-        'title', 'description', 'name', 'picture', 'extracto', 'body', 'status', 'slug', 'contador'
+        'blogger_id','categoria_id', 'title', 'description', 'name', 'descripcion', 'body', 'picture', 'status', 'slug', 'contador'
     ];
 
     //Route Model Binding

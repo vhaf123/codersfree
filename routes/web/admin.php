@@ -36,3 +36,4 @@ Route::resource('temas', 'TemaController')->names('admin.temas');
 //Blog
 
 Route::resource('posts', 'PostController')->names('admin.posts');
+Route::resource('tags', 'TagController')->names('admin.tags');

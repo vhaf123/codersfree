@@ -1,60 +1,44 @@
 @extends('adminlte::page')
 
-@section('title', 'Cursos')
+@section('title', 'Tags')
 
 @section('plugins.Datatables', true)
 
-@section('content_header')
-    <div class="d-flex align-items-center justify-content-between">
-        <h1>Cursos</h1>
-        
-        @can('admin.cursos.create')
-            <a href="{{route('admin.cursos.create')}}" class="btn btn-primary">Crear curso</a>
-        @endcan
-
-    </div>
-@stop
-
 @section('content')
-    
-    
     <div class="card">
         <div class="card-body">
-            <table class="table table-striped" id="cursos">
+            <table class="table table-striped" id="tags">
                 <thead>
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
-                        <th>Categoría</th>
-                        <th>Matriculados</th>
+                        <th>Background</th>
                         <th width = '10px'></th>
                         <th width = '10px'></th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    @foreach ($cursos as $curso)
-                        <tr>
-                            <td>{{$curso->id}}</td>
-                            <td>{{$curso->name}}</td>
-                            <td>{{$curso->Categoria->name}}</td>
-                            <td>{{$curso->users_count}} alumnos</td>
-
-                            @can('admin.cursos.edit')
-                                <td>
-                                    <a href="{{route('admin.cursos.edit', $curso)}}" class="btn btn-success btn-sm">Editar</a>
-                                </td>
-                            @endcan
-
-                            @can('admin.cursos.destroy')
-                                <td>
-                                    {!! Form::open(['route' => ['admin.cursos.destroy', $curso], 'method' => 'delete', 'class' => 'formulario-eliminar']) !!}
-                                        {!! Form::submit('Eliminar', ['class' => 'btn btn-danger btn-sm']) !!}
-                                    {!! Form::close() !!}
-                                </td>
-                            @endcan
-                        </tr>
-                    @endforeach    
+                    @foreach ($tags as $tag)
+                    <tr>
+                        <td>{{$tag->id}}</td>
+                        <td>{{$tag->name}}</td>
+                        <td>
+                            <span class="badge {{$tag->background}}">
+                                {{$tag->background}}
+                            </span>
+                        </td>
+                       
+                        <td>
+                            <a href="{{route('admin.tags.edit', $tag)}}" class="btn btn-primary btn-sm">Editar</a>
+                        </td>
+                        <td>
+                            {!! Form::open(['route' => ['admin.tags.destroy', $tag], 'method' => 'delete', 'class' => 'formulario-eliminar']) !!}
+                                {!! Form::submit('Eliminar', ['class' => 'btn btn-danger btn-sm']) !!}
+                            {!! Form::close() !!}
+                        </td>
+                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
@@ -64,7 +48,7 @@
 @section('js')
     <script>
         /* Datatable */
-        $('#cursos').DataTable({
+        $('#tags').DataTable({
             responsive: true,
             autoWidth: false,
 
@@ -92,7 +76,7 @@
             }
         });
 
-        /* Confirmar eliminar */
+        //Confirmar eliminar
         $('.formulario-eliminar').submit(function(e){
             e.preventDefault();
 

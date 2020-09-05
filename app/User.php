@@ -69,6 +69,10 @@ class User extends Authenticatable
         return $this->hasOne('App\Profesor');
     }
 
+    public function blogger(){
+        return $this->hasOne('App\Blogger');
+    }
+
     //Relacion uno a muchos
 
     public function socialProfiles(){
