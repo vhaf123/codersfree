@@ -6,8 +6,6 @@ use App\Http\Controllers\Controller;
 use App\PagePost;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use Intervention\Image\Facades\Image;
-use Illuminate\Support\Str;
 
 class PagePostController extends Controller
 {

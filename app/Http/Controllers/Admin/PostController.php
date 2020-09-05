@@ -8,8 +8,6 @@ use App\Post;
 use App\Tag;
 use Illuminate\Http\Request;
 
-use Intervention\Image\Facades\Image;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
@@ -56,18 +54,8 @@ class PostController extends Controller
         ]);
         
         $resultado = $request->all();
-
-        $nombre = Str::random(30) . '.png';
-        $path = storage_path() . "\app\public\posts/" . $nombre;
-
-        Image::make($request->file('picture'))
-            ->resize(1280, null, function ($constraint) {
-                $constraint->aspectRatio();
-            })
-            ->encode('png')
-            ->save($path);
-
-        $resultado['picture'] = 'posts/' . $nombre;
+        
+        $resultado['picture'] = Storage::put('posts', $request->file('picture'));
 
         $post = Post::create($resultado);
 
@@ -114,17 +102,7 @@ class PostController extends Controller
 
         if($request->file('picture')){
             Storage::delete($post->picture);
-            $nombre = Str::random(30) . '.png';
-            $path = storage_path() . "\app\public\posts/" . $nombre;
-
-            Image::make($request->file('picture'))
-                ->resize(1280, null, function ($constraint) {
-                    $constraint->aspectRatio();
-                })
-                ->encode('png')
-                ->save($path);
-
-            $resultado['picture'] = 'posts/' . $nombre;
+            $resultado['picture'] = Storage::put('posts', $request->file('picture'));
         }
 
         $post->update($resultado);

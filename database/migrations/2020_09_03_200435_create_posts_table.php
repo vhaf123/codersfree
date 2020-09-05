@@ -45,6 +45,7 @@ class CreatePostsTable extends Migration
             $table->integer('contador')->default(0)->nullable();
 
             $table->timestamps();
+            $table->softDeletes()->nullable();
         });
     }
 

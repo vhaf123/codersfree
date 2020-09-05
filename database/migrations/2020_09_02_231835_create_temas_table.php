@@ -35,6 +35,7 @@ class CreateTemasTable extends Migration
             ])->nullable()->default(\App\Tema::BORRADOR);
 
             $table->timestamps();
+            $table->softDeletes()->nullable();
         });
     }
 
