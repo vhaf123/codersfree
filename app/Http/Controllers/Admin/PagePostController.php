@@ -37,22 +37,10 @@ class PagePostController extends Controller
         $resultado = $request->all();
 
         if($request->file('picture')){
-
-            if($page_post->picture){
-                Storage::delete($page_post->picture);
-            }
-
-            $nombre = Str::random(30) . '.png';
-            $path = storage_path() . "\app\public\posts/" . $nombre;
-
-            Image::make($request->file('picture'))
-                ->resize(1280, null, function ($constraint) {
-                    $constraint->aspectRatio();
-                })
-                ->encode('png')
-                ->save($path);
-
-            $resultado['picture'] = 'posts/' . $nombre;
+            
+            Storage::delete($page_post->picture);
+            $resultado['picture'] = Storage::put('posts', $request->file('picture'));
+            
         }
 
         $page_post->update($resultado);
