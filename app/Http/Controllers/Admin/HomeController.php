@@ -74,7 +74,7 @@ class HomeController extends Controller
         if($request->file('contenido_picture_1')){
             
             Storage::delete($home->contenido_picture_1);
-            $resultado['contenido_picture_1'] = Storage::put('home', file('contenido_picture_1'));
+            $resultado['contenido_picture_1'] = Storage::put('home', $request->file('contenido_picture_1'));
         }
 
         if($request->file('contenido_picture_2')){
