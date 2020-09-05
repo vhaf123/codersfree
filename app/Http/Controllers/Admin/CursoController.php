@@ -51,18 +51,7 @@ class CursoController extends Controller
 
         $resultado = $request->all();
 
-        $nombre = Str::random(30) . '.png';
-        $path = storage_path() . "\app\public\cursos/" . $nombre;
-
-        Image::make($request->file('picture'))
-                ->resize(640, null, function ($constraint) {
-                    $constraint->aspectRatio();
-                })
-                ->encode('png')
-                ->save($path);
-
-        $resultado['picture'] = 'cursos/' . $nombre;
-
+        $resultado['picture'] = Storage::put('cursos', $request->file('picture'));
         $curso = Curso::create($resultado);
         
         return redirect()->route('admin.cursos.edit', $curso)->with('info', 'El curso se creó con éxito');
@@ -97,18 +86,8 @@ class CursoController extends Controller
         if($request->file('picture')){
 
             Storage::delete($curso->picture);
-
-            $nombre = Str::random(30) . '.png';
-            $path = storage_path() . "\app\public\cursos/" . $nombre;
-
-            Image::make($request->file('picture'))
-                ->resize(640, null, function ($constraint) {
-                    $constraint->aspectRatio();
-                })
-                ->encode('png')
-                ->save($path);
-
-                $resultado['picture'] = 'cursos/' . $nombre;
+            $resultado['picture'] = Storage::put('cursos', $request->file('picture'));
+            
         }
 
         $curso->update($resultado);
