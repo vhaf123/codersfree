@@ -7,10 +7,6 @@ use Illuminate\Http\Request;
 use App\Home;
 use Illuminate\Support\Facades\Storage;
 
-use Intervention\Image\Facades\Image;
-
-use Illuminate\Support\Str;
-
 class HomeController extends Controller
 {
 
@@ -76,107 +72,43 @@ class HomeController extends Controller
         }
 
         if($request->file('contenido_picture_1')){
-            if($home->contenido_picture_1){
-                Storage::delete($home->contenido_picture_1);
-            }
-
-            $nombre = Str::random(30) . '.png';
-            $path = storage_path() . "\app\public\home/" . $nombre;
-
-            Image::make($request->file('contenido_picture_1'))
-                ->resize(300, null, function ($constraint) {
-                    $constraint->aspectRatio();
-                })
-                ->encode('png')
-                ->save($path);
-
-            $resultado['contenido_picture_1'] = 'home/' . $nombre;
+            
+            Storage::delete($home->contenido_picture_1);
+            $resultado['contenido_picture_1'] = Storage::put('home', file('contenido_picture_1'));
         }
 
         if($request->file('contenido_picture_2')){
-            if($home->contenido_picture_2){
-                Storage::delete($home->contenido_picture_2);
-            }
-            $nombre = Str::random(30) . '.png';
-            $path = storage_path() . "\app\public\home/" . $nombre;
+            
+            Storage::delete($home->contenido_picture_2);
+            $resultado['contenido_picture_2'] = Storage::put('home', $request->file('contenido_picture_2'));
 
-            Image::make($request->file('contenido_picture_2'))
-                ->resize(300, null, function ($constraint) {
-                    $constraint->aspectRatio();
-                })
-                ->encode('png')
-                ->save($path);
-
-            $resultado['contenido_picture_2'] = 'home/' . $nombre;
         }
 
         if($request->file('contenido_picture_3')){
-            if($home->contenido_picture_3){
-                Storage::delete($home->contenido_picture_3);
-            }
-            $nombre = Str::random(30) . '.png';
-            $path = storage_path() . "\app\public\home/" . $nombre;
 
-            Image::make($request->file('contenido_picture_3'))
-                ->resize(300, null, function ($constraint) {
-                    $constraint->aspectRatio();
-                })
-                ->encode('png')
-                ->save($path);
-
-            $resultado['contenido_picture_3'] = 'home/' . $nombre;
+            Storage::delete($home->contenido_picture_3);
+            $resultado['contenido_picture_3'] = Storage::put('home', $request->file('contenido_picture_3'));
+            
         }
 
         if($request->file('contenido_picture_4')){
-            if($home->contenido_picture_4){
-                Storage::delete($home->contenido_picture_4);
-            }
-            $nombre = Str::random(30) . '.png';
-            $path = storage_path() . "\app\public\home/" . $nombre;
-
-            Image::make($request->file('contenido_picture_4'))
-                ->resize(300, null, function ($constraint) {
-                    $constraint->aspectRatio();
-                })
-                ->encode('png')
-                ->save($path);
-
-            $resultado['contenido_picture_4'] = 'home/' . $nombre;
+            
+            Storage::delete($home->contenido_picture_4);
+            $resultado['contenido_picture_4'] = Storage::put('home', $request->file('contenido_picture_4'));
+            
         }
 
         if($request->file('nuevo_contenido_picture')){
-            if($home->nuevo_contenido_picture){
-                Storage::delete($home->nuevo_contenido_picture);
-            }
-            
-            $nombre = Str::random(30) . '.png';
-            $path = storage_path() . "\app\public\home/" . $nombre;
 
-            Image::make($request->file('nuevo_contenido_picture'))
-                ->resize(640, null, function ($constraint) {
-                    $constraint->aspectRatio();
-                })
-                ->encode('png')
-                ->save($path);
+            Storage::delete($home->nuevo_contenido_picture);
+            $resultado['nuevo_contenido_picture'] = Storage::put('home', $request->file('nuevo_contenido_picture'));
 
-            $resultado['nuevo_contenido_picture'] = 'home/' . $nombre;
         }
 
         if($request->file('informacion_picture')){
 
             Storage::delete($home->informacion_picture);
-            
-            $nombre = Str::random(30) . '.png';
-            $path = storage_path() . "\app\public\home/" . $nombre;
-
-            Image::make($request->file('informacion_picture'))
-                ->resize(640, null, function ($constraint) {
-                    $constraint->aspectRatio();
-                })
-                ->encode('png')
-                ->save($path);
-
-            $resultado['informacion_picture'] = 'home/' . $nombre;
+            $resultado['informacion_picture'] = Storage::put('home', $request->file('informacion_picture'));
         }
         
         $home->update($resultado);
