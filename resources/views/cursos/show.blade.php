@@ -88,22 +88,7 @@
                         <i class="far fa-star"></i>
                         Calificación: {{$curso->rating}}
                     </p>
-        
-                    {{-- @can('matriculado', $curso)
-        
-                        <a href="{{route('course-status.index', $curso)}}" class="btn btn-danger">
-                            Continuar con el curso
-                        </a>
-        
-                    @else
-        
-                        {!! Form::open(['route' => ['cursos.matricular', $curso]]) !!}
-        
-                            {!! Form::submit('Llevar este curso', ['class' => 'btn btn-danger']) !!}
-                        
-                        {!! Form::close() !!}
-                    @endcan --}}
-        
+               
                 </div>
             </div>
         </div>
@@ -229,7 +214,7 @@
                     </header>
 
 
-                    <div class="card">
+                    <div class="card shadow rounded">
                         <div class="card-body">
                             <p class="pl-3 lead text-secondary">
                                 {{$curso->reviews->count()}} valoracion(es)
@@ -271,48 +256,7 @@
                         </div>
                     </div>
 
-                    {{-- <div class="card">
-                        <div class="card-body">
-                            <p class="pl-3 lead text-secondary">
-                                {{$curso->reviews->count()}} valoracion(es)
-                            </p>
 
-                            @forelse ($curso->reviews as $review)
-                    
-                                <article class="mb-3 border-bottom">
-                    
-                                    <div class="media">
-                                        <img class = "mr-3 img-thumbnail rounded-circle" src="{{asset($review->user->adminlte_image())}}" alt="" style="width:  60px; height:60px; object-fit: cover;">
-                                        
-                                        <div class="media-body text-secondary">
-                                            <div class="card">
-                                                <div class="card-body bg-light shadow">
-                                                    <p class="mb-1"><span class="font-weight-bold">{{$review->user->name}} </span> <i class="fas fa-star text-warning"></i> ({{$review->rating}}) <small>{{$review->created_at->diffForHumans()}}</small></p>
-                                                    <div class="comen">
-                                                        {!!$review->comentario!!}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                    
-                                    </div>
-                    
-                                </article>
-                    
-                            @empty
-                    
-                                <article>
-                                    <div class="card bg-light shadow">
-                                        <div class="card-body">
-                                            <p class="lead mb-0">Este curso no cuenta con ninguna reseña</p>
-                                        </div>
-                                    </div>
-                                </article>
-                    
-                            @endforelse
-
-                        </div>
-                    </div> --}}
                 </section>
 
                 {{-- Reviews --}}
@@ -368,7 +312,7 @@
 
                                         <div class="media-body">
                                             <div class="form-group">
-                                                {!! Form::textarea('comentario', null, ['class' => 'form-control mb-2'  . ( $errors->has('comentario') ? ' is-invalid' : '' ), 'rows' => "3", 'placeholder' => 'Ingresa un comentario', 'required']) !!}
+                                                {!! Form::textarea('comentario', null, ['class' => 'form-control shadow rounded mb-2'  . ( $errors->has('comentario') ? ' is-invalid' : '' ), 'rows' => "3", 'placeholder' => 'Ingresa un comentario', 'required']) !!}
                                                 @error('comentario')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>

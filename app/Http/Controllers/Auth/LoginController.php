@@ -47,6 +47,7 @@ class LoginController extends Controller
 
     public function redirectToProvider($driver)
     {
+
         $drivers = ['facebook', 'google'];
 
         if(in_array($driver, $drivers)){
