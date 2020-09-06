@@ -99,8 +99,9 @@
                         <h1 class="h3 text-center mb-3">LARAVEL 7</h1>
 
                         <ul class="list-unstyled indice">
+
+                            @forelse ($manual->capitulos as $capitulo)
             
-                            @foreach ($manual->capitulos as $capitulo)
                                 <li>
                                     <h1 class="h6 font-weight-bold">{{$capitulo->name}}</h1>
                 
@@ -121,8 +122,11 @@
                 
                                 </li>
                 
-                                
-                            @endforeach
+                            @empty
+                                <div class="alert alert-danger" role="alert">
+                                    <strong>Aún no se ha agregado ningún tema</strong>
+                                </div>
+                            @endforelse
                         </ul>
                         
 
