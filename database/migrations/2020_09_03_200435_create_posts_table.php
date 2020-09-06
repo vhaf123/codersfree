@@ -27,14 +27,14 @@ class CreatePostsTable extends Migration
                     ->references('id')->on('categorias')
                     ->onDelete('set null');
 
-            $table->string('title');
-            $table->text('description');
+            $table->string('title')->nullable();
+            $table->text('description')->nullable();
 
             $table->string('name');
-            $table->string('descripcion');
+            $table->string('descripcion')->nullable();
             $table->text('body')->nullable();
 
-            $table->string('picture');
+            $table->string('picture')->nullable();
 
             $table->enum('status', [
                 \App\Post::BORRADOR, \App\Post::PUBLICADO
