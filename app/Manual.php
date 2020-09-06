@@ -21,15 +21,21 @@ class Manual extends Model
     }
 
     //Relación uno a muchos
-    public function temas()
+    public function capitulos()
     {
-        return $this->hasMany('App\Tema');
+        return $this->hasMany('App\Capitulo');
     }
 
     /* Relación uno a muchos inversa */
     public function categoria()
     {
         return $this->belongsTo('App\Categoria');
+    }
+
+    /* Relacion Has One Through */
+    public function temas()
+    {
+        return $this->hasManyThrough('App\Tema', 'App\Capitulo');
     }
   
 }

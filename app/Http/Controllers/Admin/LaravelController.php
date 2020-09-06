@@ -16,7 +16,7 @@ class LaravelController extends Controller
     public function index(){
 
         $manual = Manual::first();
-
         return view('admin.laravel.index', compact('manual'));
+        
     }
 }

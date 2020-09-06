@@ -1,5 +1,6 @@
 <?php
 
+use App\Capitulo;
 use App\Manual;
 use App\Tema;
 use Illuminate\Database\Seeder;
@@ -20,8 +21,12 @@ class ManualSeeder extends Seeder
             'status' => 2
         ]);
 
-        /* factory(Tema::class, 25)->create([
+        /* factory(Capitulo::class, 5)->create([
             'manual_id' => $manual->id
-        ]); */
+        ])->each(function($capitulo){
+            factory(Tema::class, 5)->create([
+                'capitulo_id' => $capitulo->id
+            ]);
+        }); */
     }
 }

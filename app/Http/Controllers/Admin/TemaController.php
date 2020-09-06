@@ -32,16 +32,14 @@ class TemaController extends Controller
     
     public function store(Request $request)
     {
+
         $request->validate([
-            'manual_id' => 'required',
-            'name' => 'required|unique:temas',
-            'body' => 'required',
-            'description' => 'required'
+            'name' => 'required'
         ]);
 
-        $tema = Tema::create($request->all());
-        
-        return redirect()->route('admin.temas.edit', $tema)->with('info', 'El tema se creó con éxito');
+        Tema::create($request->all());
+
+        return back()->with('info', 'El tema se creó con éxito');
         
     }
 
@@ -54,21 +52,30 @@ class TemaController extends Controller
    
     public function edit(Tema $tema)
     {
+        $status = [
+            '1' => 'Borrador',
+            '2' => 'Publicado'
+        ];
+
         $manual = Manual::first();
-        return view('admin.temas.edit', compact('tema', 'manual'));
+        return view('admin.temas.edit', compact('tema', 'manual', 'status'));
     }
 
    
     public function update(Request $request, Tema $tema)
     {
-        $request->validate([
-            'manual_id' => 'required',
-            'name' => "required|unique:temas,name,$tema->id",
-            'body' => 'required',
-            'description' => 'required'
-        ]);
+
+        if($request->status == 2){
+            $request->validate([
+                'name' => "required|unique:temas,name,$tema->id",
+                'body' => 'required',
+                'title' => 'required',
+                'description' => 'required'
+            ]);
+        }
 
         $tema->update($request->all());
+        
         return redirect()->route('admin.temas.edit', $tema)->with('info', 'El tema se actualizó con éxito');
     }
 

@@ -1,22 +1,23 @@
 @extends('layouts.app')
 
-@section('title'){{$laravel->title}}@endsection
-@section('description'){{$laravel->description}}@endsection
+@section('title'){{$manual->title}}@endsection
+@section('description'){{$manual->description}}@endsection
 
 @section('css')
     <style>
 
-        .indice li{
+        
+        .indice > li > h1{
             padding-left: 38px;
         }
 
-        .indice{
+        .subindice{
             position: relative;
             list-style-type: none;
             padding-left: 0;
         }
 
-        .indice:before{
+        .subindice:before{
             content: ' ';
             background: #d4d9df;
             display: inline-block;
@@ -28,11 +29,11 @@
             z-index: 400;
         }
 
-        .indice li{
+        .subindice li{
             position: relative;
         }
 
-        .indice li:before{
+        .subindice li:before{
             content: ' ';
             background: white;
             display: inline-block;
@@ -46,12 +47,17 @@
             z-index: 400;
         }
 
-        .indice .active:before{
+        .subindice .active:before{
             border: 3px solid #facf5a!important;
         }
 
-        .indice li:not(:first-of-type){
+        .subindice li:not(:first-of-type){
             margin: 10px 0;
+        }
+
+        .subindice li h2{
+            padding-left: 38px;
+            
         }
 
         .principal p, .principal li{
@@ -63,7 +69,7 @@
         }
 
         .container{
-            max-width: 1200px;
+            max-width: 1250px;
         }
 
     </style>
@@ -93,23 +99,32 @@
                         <h1 class="h3 text-center mb-3">LARAVEL 7</h1>
 
                         <ul class="list-unstyled indice">
+            
+                            @foreach ($manual->capitulos as $capitulo)
+                                <li>
+                                    <h1 class="h6 font-weight-bold">{{$capitulo->name}}</h1>
+                
+                                    <ul class="subindice">
+                                        @foreach ($capitulo->temas as $tema)
+                                        
+                                            <li @if ($tema->id == $actual->id) class="active" @endif>
+                                                <h2 class = "h6">
+                                                    <a href="{{route('laravel.tema',  $tema)}}" class="text-secondary text-decoration-none">
+                                                        {{$tema->name}}
+                                                    </a>
+                                                </h2>
+                                            </li>
 
-                            @forelse ($laravel->temas as $tema)
-                                <li @if ($actual->id == $tema->id) class="active" @endif>
-                                    <h2 class = "h6">
-                                        <a href="{{route('laravel.tema', $tema)}}" class="text-secondary text-decoration-none">
-                                            {{$tema->name}}
-                                        </a>
-                                    </h2>
+                                        @endforeach
+                                        
+                                    </ul>
+                
                                 </li>
-                            @empty
-                                <div class="alert alert-danger" role="alert">
-                                    <strong>No se ha agregado ningún tema aún</strong>
-                                </div>                                
-                            @endforelse
-                            
-                         
+                
+                                
+                            @endforeach
                         </ul>
+                        
 
                     </div>
                 </div>

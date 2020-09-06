@@ -7,25 +7,84 @@
 @section('content_header')
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
       <li class="breadcrumb-item"><a href="{{route('admin.laravel')}}">Manual de laravel</a></li>
+      <li class="breadcrumb-item"><a href="{{route('admin.capitulos.show', $tema->capitulo)}}">{{$tema->capitulo->name}}</a></li>
       <li class="breadcrumb-item active" aria-current="page">{{$tema->name}}</li>
     </ol>
   </nav>
 @stop
 
 @section('content')
-    <div class="card">
-        <div class="card-body">
-          {!! Form::model($tema, ['route' => ['admin.temas.update', $tema], 'method' => 'put']) !!}
-            {!! Form::hidden('manual_id', $manual->id, ['class' => 'form-control']) !!}
+  {!! Form::model($tema, ['route' => ['admin.temas.update', $tema], 'method' => 'put']) !!}
+    <div class="row">
+      <div class="col-8">
+        <div class="card">
+            <div class="card-body">
+              
+              {{-- Nombre --}}
+              <div class="form-group">
+                  {!! Form::label('name', 'Nombre') !!}
+                  {!! Form::text('name', null, ['class' => 'form-control' . ( $errors->has('name') ? ' is-invalid' : '' )]) !!}
+                  @error('name')
+                      <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                      </span>
+                  @enderror
+              </div>
+              
+              
+              {{-- Body --}}
+              <div class="form-group">
+                  {!! Form::label('body', 'Contenido') !!}
+                  {!! Form::textarea('body', null, ['class' => 'form-control my-editor'  . ( $errors->has('body') ? ' is-invalid' : '' )]) !!}
+                  @error('body')
+                      <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                      </span>
+                  @enderror
+              </div>
 
-            @include('admin.temas.partials.form')
+                
+              
+            </div>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="card">
+          <div class="card-body">
+
+            <div class="form-group">
+              {!! Form::label('title', 'Title') !!}
+              {!! Form::text('title', null, ['class' => 'form-control' . ( $errors->has('title') ? ' is-invalid' : '' )]) !!}
+              @error('title')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+              @enderror
+            </div>
+
+            <div class="form-group">
+              {!! Form::label('description', 'Descripción') !!}
+              {!! Form::textarea('description', null, ['class' => 'form-control' . ( $errors->has('description') ? ' is-invalid' : '' ), 'rows' => '4']) !!}
+              @error('description')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+              @enderror
+            </div>
+
+            <div class="form-group">
+              {!! Form::select('status', $status, null, ['class' => 'form-control']) !!}
+            </div>
 
             {!! Form::submit('Actualizar Tema', ['class' => 'btn btn-primary btn-block']) !!}
-          {!! Form::close() !!}
+
+          </div>
         </div>
+      </div>
     </div>
+  {!! Form::close() !!}
 @endsection
 
 @section('js')

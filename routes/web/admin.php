@@ -33,6 +33,8 @@ Route::resource('videos', 'VideoController')->except('index', 'create', 'show')-
 
 Route::get('manual-laravel-7', 'LaravelController@index')->name('admin.laravel');
 
+Route::resource('capitulos', 'CapituloController')->names('admin.capitulos');
+
 Route::resource('temas', 'TemaController')->names('admin.temas');
 
 //Blog

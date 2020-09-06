@@ -9,15 +9,15 @@ class Tema extends Model
     const BORRADOR = 1;
     const PUBLICADO = 2;
 
-    protected $fillable = ['manual_id','capitulo', 'name', 'body', 'slug', 'title', 'description'];
+    protected $fillable = ['capitulo_id', 'name', 'body', 'slug', 'title', 'description'];
 
     public function getRouteKeyName()
     {
         return 'slug';
     }
 
-    public function manual()
+    public function capitulo()
     {
-        return $this->belongsTo('App\Manual');
+        return $this->belongsTo('App\Capitulo');
     }
 }
