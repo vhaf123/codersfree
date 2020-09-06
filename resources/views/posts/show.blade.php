@@ -76,7 +76,17 @@ href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/default.
                 <div class="row align-items-center">
                     <div class="col-12 col-lg-9">
 
-                        @include('posts.partials.categorias-post')
+                        <div class="d-flex">
+                            @foreach ($post->tags as $tag)
+                        
+                                <p class="lead mb-0 mr-3">
+                                    <span class="badge {{$tag->background}}">
+                                        {{$tag->name}}
+                                    </span>
+                                </p>
+                                
+                            @endforeach
+                        </div>
                         
                         <hgroup>
                             <h1 class="text-white font-weight-bold text-shadow">
