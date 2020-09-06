@@ -1,12 +1,5 @@
 <div class="d-flex">
-
-    <p class="lead mb-0 mr-3">
-        <span class="badge {{$tag->background}}">
-            {{$tag->name}}
-        </span>
-    </p>
-
-    {{-- @foreach ($post->tags as $tag)
+    @foreach ($post->tags as $tag)
         @switch($tag->id)
             @case(1)
                 
@@ -59,5 +52,5 @@
             @default
                 
         @endswitch
-    @endforeach --}}
+    @endforeach
 </div>
