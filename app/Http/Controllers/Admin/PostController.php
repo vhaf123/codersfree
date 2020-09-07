@@ -47,18 +47,19 @@ class PostController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255|unique:posts',
-            'descripcion' => 'required|string|max:255',
+            /* 'descripcion' => 'required|string|max:255',
             'body' => 'required',
             'tags' => 'required',
-            'picture' => 'required'
+            'picture' => 'required' */
         ]);
         
         $resultado = $request->all();
-        
-        $resultado['picture'] = Storage::put('posts', $request->file('picture'));
+
+        if($request->file('picture')){
+            $resultado['picture'] = Storage::put('posts', $request->file('picture'));
+        }
 
         $post = Post::create($resultado);
-
         $post->tags()->sync($request->get('tags'));
 
         return redirect()->route('admin.posts.edit', $post)->with('info', 'El post se creó con éxito');
@@ -88,14 +89,31 @@ class PostController extends Controller
 
     public function update(Request $request, Post $post)
     {
-        $request->validate([
-            'name' => 'required|string|max:255|unique:posts,name,'.$post->id,
-            'descripcion' => 'required|string|max:255',
-            'body' => 'required',
-            'tags' => 'required',
-            'title' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
-        ]);
+
+        if($request->status == 1){
+
+            $request->validate([
+                'name' => 'required|string|max:255|unique:posts,name,'.$post->id,
+            ]);
+
+        }else{
+
+            $request->validate([
+                'name' => 'required|string|max:255|unique:posts,name,'.$post->id,
+                'descripcion' => 'required|string|max:255',
+                'body' => 'required',
+                'tags' => 'required',
+                'title' => 'required|string|max:255',
+                'description' => 'required|string|max:255',
+            ]);
+            
+            if(!$post->picture){
+                $request->validate([
+                    'picture' => 'required'
+                ]);
+            }
+            
+        }
 
         
         $resultado = $request->all();
