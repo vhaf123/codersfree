@@ -90,6 +90,11 @@
         </button>
 
     </form>
+
+    <p class="mt-3 mb-2 text-center lead">-o-</p>
+
+    <a href="{{url('login/facebook')}}" class="btn btn-block btn-primary">Registrate con Facebook</a>
+    <a href="{{url('login/google')}}" class="btn btn-block btn-danger">Registrate con Google</a>
 @stop
 
 @section('auth_footer')
