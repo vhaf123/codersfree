@@ -4,6 +4,10 @@
 @section('description'){{$manual->description}}@endsection
 
 @section('css')
+
+<link rel="stylesheet"
+href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/default.min.css">
+
     <style>
 
         
@@ -157,4 +161,8 @@
         </div>
     </div>
 
+@endsection
+
+@section('js')
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.1/build/highlight.min.js"></script>
 @endsection
