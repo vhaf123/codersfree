@@ -6,6 +6,15 @@
 
 @section('css')
     <link rel="stylesheet" href="{{asset('vendor/jquery-ui/jquery-ui.min.css')}}">
+
+
+    <style>
+        .bg-vistas{
+            background-color: rgba(52, 58, 64, 0.5);
+            color: white;
+        }
+    </style>
+
 @endsection
 
 @section('content')

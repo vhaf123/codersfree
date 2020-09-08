@@ -3,9 +3,9 @@
 
     <div class="card-img">
         <img src="{{Storage::url($post->picture)}}" alt="">
-        <div class="card-text d-flex flex-column justify-content-between  px-2 pt-2 pb-1">
+        <div class="card-text d-flex flex-column justify-content-between">
             
-            <div class="tags">
+            <div class="tags ml-3 mt-2">
                 @foreach ($post->tags as $tag)
 
                     <p class="lead d-inline mr-2">
@@ -21,7 +21,7 @@
                 @endforeach
             </div>
 
-            <div class="publicacion-conteo px-3 text-white d-flex justify-content-between">
+            <div class="publicacion-conteo px-3 py-1 text-white d-flex justify-content-between bg-vistas">
                 
                 <p class="mb-0">
                     <i class="far fa-calendar-alt mr-2"></i>{{$post->created_at->toFormattedDateString()}}
