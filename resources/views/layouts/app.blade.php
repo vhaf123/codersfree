@@ -28,7 +28,8 @@
     <meta property="og:image:height" content="450" />
     <meta property="fb:app_id" content="264847741428588" />
     <meta property="og:title" content="@yield('title')" />
-    <meta property="og:description" content="@yield('description')" />
+    {{-- <meta property="og:description" content="@yield('description')" /> --}}
+    <meta property="og:description" content="En este artículo te enseñaré a como sacarle el máximo provecho al plugin Datatable. Veremos como incorporarlo, traducirlo y volverlo responsive.">
     <meta property="og:image" content="@yield('image')" />
 
     {{-- favicon --}}
