@@ -145,7 +145,7 @@
                     <div class="card-body text-secondary">
 
                         @if ($actual)
-                            <h1>{{$actual->name}}</h1>
+                            <h1 class="text-uppercase text-center">{{$actual->name}}</h1>
                             <p>{{$actual->descripcion}}</p>
                             {!!$actual->body!!}
 
