@@ -59,6 +59,12 @@
             text-shadow: 1px 1px #282828;
         }
 
+
+       /*  iframe{
+            width: 100%!important;
+            height: auto!important;
+        } */
+
     </style>
 @endsection
 

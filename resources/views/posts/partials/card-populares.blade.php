@@ -9,11 +9,12 @@
                 @foreach ($post->tags as $tag)
 
                     <p class="lead d-inline mr-2">
-                        <a href="{{route('tags.show', $tag)}}" class="text-decoration-none">
-                            <span class="badge {{$tag->background}}">
-                                {{$tag->name}}
-                            </span>
-                        </a>
+                        <span class="badge {{$tag->background}}">
+                            {{$tag->name}}
+                        </span>
+                        {{-- <a href="{{route('tags.show', $tag)}}" class="text-decoration-none">
+                            
+                        </a> --}}
                     </p>
 
                     
