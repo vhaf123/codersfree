@@ -1,5 +1,8 @@
 @extends('layouts.app')
-@section('title'){{$post->title}}@endsection
+
+@section('title', $post->title)
+@section('description', $post->description)
+@section('image', Storage::url($post->picture))
 
 @section('css')
 
