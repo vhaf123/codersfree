@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
-@section('title'){{$manual->title}}@endsection
-@section('description'){{$manual->description}}@endsection
+@section('title', $manual->title)
+@section('description', $manual->description)
+@section('image', asset('img/layouts/logo.svg'))
 
 @section('css')
 
@@ -89,7 +90,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                       <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
-                      <li class="breadcrumb-item"><a href="{{route('laravel.index')}}">Manual de Laravel</a></li>
+                      <li class="breadcrumb-item"><a href="{{route('laravel.index')}}">Documentación de Laravel 8 en español</a></li>
                       <li class="breadcrumb-item active" aria-current="page">@if ($actual) {{$actual->name}} @else No hay ningún tema agregado @endif</li>
                     </ol>
                 </nav>
@@ -99,7 +100,7 @@
                 <div class="card shadow">
                     <div class="card-body">
 
-                        <h1 class="h3 text-center mb-3">LARAVEL 7</h1>
+                        <h1 class="h3 text-center mb-3">LARAVEL 8</h1>
 
                         <ul class="list-unstyled indice">
 
@@ -111,13 +112,15 @@
                                     <ul class="subindice">
                                         @foreach ($capitulo->temas as $tema)
                                         
-                                            <li @if ($tema->id == $actual->id) class="active" @endif>
-                                                <h2 class = "h6">
-                                                    <a href="{{route('laravel.tema',  $tema)}}" class="text-secondary text-decoration-none">
-                                                        {{$tema->name}}
-                                                    </a>
-                                                </h2>
-                                            </li>
+                                            @if ($tema->status == 2)
+                                                <li @if ($tema->id == $actual->id) class="active" @endif>
+                                                    <h2 class = "h6">
+                                                        <a href="{{route('laravel.tema',  $tema)}}" class="text-secondary text-decoration-none">
+                                                            {{$tema->name}}
+                                                        </a>
+                                                    </h2>
+                                                </li>
+                                            @endif
 
                                         @endforeach
                                         

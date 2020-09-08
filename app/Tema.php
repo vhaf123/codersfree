@@ -9,7 +9,7 @@ class Tema extends Model
     const BORRADOR = 1;
     const PUBLICADO = 2;
 
-    protected $fillable = ['capitulo_id', 'name', 'body', 'slug', 'title', 'description'];
+    protected $fillable = ['capitulo_id', 'name', 'body', 'slug', 'title', 'description', 'status'];
 
     public function getRouteKeyName()
     {
