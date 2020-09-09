@@ -1,0 +1,31 @@
+.encontraras{
+    padding-bottom: 0;
+}
+
+.contenido > li{
+    font-weight: bold;
+}
+
+.contenido ul{
+    font-weight: normal;
+}
+
+.contenido a{
+    text-decoration: none;
+}
+
+section > h1{
+    color: #3490dc;
+    font-size: 28px;
+    text-transform: uppercase;
+}
+
+
+article > h1{
+    font-size: 24px;
+    color: #626262;
+}
+
+article > h2{
+    font-size: 20px;
+}
