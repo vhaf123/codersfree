@@ -144,10 +144,10 @@
 
         <div class="col-12 col-md-8">
             <div class="card">
-                <div class="card-body text-secondary">
-                    {{-- <h1 class="text-uppercase text-center">{{$actual->name}}</h1> --}}
+                <div class="card-body text-secondary principal">
+                    <h1 class="my-3">{{$actual->name}}</h1>
                     @if ($actual)
-                        <p>{{$actual->descripcion}}</p>
+                        
                         {!!$actual->body!!}
 
                     @else

@@ -1,4 +1,4 @@
-.encontraras{
+/* .encontraras{
     padding-bottom: 0;
 }
 
@@ -28,4 +28,16 @@ article > h1{
 
 article > h2{
     font-size: 20px;
+} */
+
+.principal h1{
+    /* color: #3490dc; */
+    font-size: 28px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.principal h2{
+    font-size: 24px;
+    color: #626262;
 }
