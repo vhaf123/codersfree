@@ -144,18 +144,26 @@
 
         <div class="col-12 col-md-8">
             <div class="card">
-                <div class="card-body text-secondary principal">
-                    <h1 class="my-3">{{$actual->name}}</h1>
-                    @if ($actual)
-                        
-                        {!!$actual->body!!}
+                <div class="card-body text-secondary">
+                    <h1 class="my-3 text-center text-uppercase h2">{{$actual->name}}</h1>
 
-                    @else
-                        <div class="alert alert-danger" role="alert">
-                            <strong>No se ha agregado ningún tema aún</strong>
-                        </div>
-                    @endif
 
+                    <div class="alert alert-danger" role="alert">
+                        Todo el contenido de esta plataforma es creado por una única persona. Si te interesaría convertirte en mecenas de esta iniciativa, te dejo <a href="https://www.patreon.com/bePatron?u=42986499" target="_blank" class="text-decoration-none"><strong>mi cuenta de patreon</strong></a>
+                    </div>
+
+                    <div class="principal">
+
+                        @if ($actual)
+                            
+                            {!!$actual->body!!}
+
+                        @else
+                            <div class="alert alert-danger" role="alert">
+                                <strong>No se ha agregado ningún tema aún</strong>
+                            </div>
+                        @endif
+                    </div>
                     
                 </div>
             </div>
