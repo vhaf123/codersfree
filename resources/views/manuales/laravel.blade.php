@@ -102,14 +102,14 @@
             <div class="card shadow">
                 <div class="card-body">
 
-                    <h1 class="h3 text-center mb-3">LARAVEL 8</h1>
+                    <h1 class="h3 text-center">LARAVEL 8</h1>
 
                     <ul class="list-unstyled indice">
 
                         @forelse ($manual->capitulos as $capitulo)
         
-                            <li>
-                                <h1 class="h6 font-weight-bold">{{$capitulo->name}}</h1>
+                            <li class="mb-4">
+                                <h1 class="h6 font-weight-bold text-uppercase">{{$capitulo->name}}</h1>
             
                                 <ul class="subindice">
                                     @foreach ($capitulo->temas as $tema)
@@ -131,10 +131,11 @@
                             </li>
             
                         @empty
-                            <div class="alert alert-danger" role="alert">
+                            <li class="alert alert-danger" role="alert">
                                 <strong>Aún no se ha agregado ningún tema</strong>
-                            </div>
+                            </li>
                         @endforelse
+                        
                     </ul>
                     
 
