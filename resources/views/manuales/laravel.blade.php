@@ -150,7 +150,7 @@
 
 
                     <div class="alert alert-success" role="alert">
-                        Todo el contenido de esta plataforma es creado por una única persona. Si te interesaría convertirte en mecenas de esta iniciativa, te dejo <a href="https://www.patreon.com/bePatron?u=42986499" target="_blank" class="text-decoration-none"><strong>mi cuenta de patreon</strong></a>
+                        Todo el contenido de esta plataforma es creado por una única persona. Si te interesa convertirte en mecenas de esta iniciativa, puedes hacerlo desde <a href="https://www.patreon.com/bePatron?u=42986499" target="_blank" class="text-decoration-none"><strong>mi cuenta de patreon</strong></a>
                     </div>
 
                     <div class="principal">
