@@ -13,8 +13,8 @@ Route::post('course-status/avance/{curso}', 'CourseStatusController@avance')->na
 Route::post('course-status/actual/{curso}', 'CourseStatusController@actual')->name('course-status.actual');
 Route::post('course-status/cursado', 'CourseStatusController@cursado')->name('course-status.cursado');
 
-Route::get('documentacion-laravel-8', 'LaravelController@index')->name('laravel.index');
-Route::get('documentacion-laravel-8/{tema}', 'LaravelController@tema')->name('laravel.tema');
+Route::get('documentacion-laravel', 'LaravelController@index')->name('laravel.index');
+Route::get('documentacion-laravel/{tema}', 'LaravelController@tema')->name('laravel.tema');
 
 
 Route::resource('blog', 'PostController')->parameters(['blog' => 'post'])->names('posts');

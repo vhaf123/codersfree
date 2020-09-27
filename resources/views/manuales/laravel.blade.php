@@ -102,7 +102,7 @@
             <div class="card shadow">
                 <div class="card-body">
 
-                    <h1 class="h3 text-center">LARAVEL 8</h1>
+                    <h1 class="h3 text-center">LARAVEL</h1>
 
                     <ul class="list-unstyled indice">
 
