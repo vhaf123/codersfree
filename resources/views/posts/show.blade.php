@@ -173,7 +173,7 @@
 
                             {{-- Te puede interesar --}}
                             <aside class="alert alert-primary mt-4" role="alert">
-                                <h1 class="h2">TE PUEDE INTERESAR:</h1>
+                                <h1 class="h4">ARTÍCULOS SIMILARES:</h1>
                                 <ul class="pl-3">
                                     @foreach ($similares as $similar)
                                         <li>
@@ -232,8 +232,6 @@
                             <strong>Últimos artículos</strong>
                         </div>
 
-                        {{-- <h1 class="h2 text-secondary text-center border-bottom border-secondary pb-2 mt-4 mb-4">Último artículos</h1> --}}
-
                         <ul class="list-unstyled">
                             @foreach ($ultimos as $ultimo)
                                 <li class="media mb-3">
@@ -272,143 +270,3 @@
     </script>
 
 @endsection
-
-
-{{-- 
-
-@section('css')
-
-    
-
-    <style>
-    
-        
-
-        
-        
-        .fan-page{
-            text-align: center;
-        }
-
-        
-
-
-        
-
-    </style>
-@endsection
-
-@section('content')
-
-    
-
-    
-
-    
-
-    <main>
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-8 px-lg-0 contenido">
-
-                    <div class="card shadow-lg">
-                        <div class="card-body pt-4">
-
-                            <article class="">
-
-                                <h1>{{$post->name}}</h1>
-
-                                {!!$post->body!!}
-
-
-                                <div class="alert alert-primary" role="alert">
-                                    <h1 class="h2">TE PUEDE INTERESAR:</h1>
-                                    <ul class="pl-3">
-                                        @foreach ($similares as $similar)
-                                            <li>
-                                                <a href="">
-                                                    {{$similar->name}}
-                                                </a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-
-                                <hr>
-
-                                <footer class="redes">
-
-                                    <p class="lead mb-0 font-weight-bold mr-2 text-secondary">Compartir: </p>
-        
-                                    <a  href=""
-                                        id="shareBtn"                                    
-                                        title="Compartir en Facebook"
-                                        class="text-facebook"
-                                        rel="nofollow">
-                                        <i class="fab fa-facebook-square"></i>
-                                    </a>
-        
-                                    <a href="https://twitter.com/intent/tweet?url={{request()->fullUrl()}}&text={{$post->name}}&via=CodersFree&hashtags=CodersFree"
-                                        title="Compartir en Twitter"
-                                        class="text-twitter" target="_blank"
-                                        rel="nofollow">
-                                        <i class="fab fa-twitter-square"></i>
-                                    </a>
-        
-                                    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{request()->fullUrl()}}"
-                                        title="Compartir en Linkedin"
-                                        class="text-linkedin" target="_blank"
-                                        rel="nofollow">
-                                        <i class="fab fa-linkedin"></i>
-                                    </a>
-        
-                                    <a href=""
-                                        title="Compartir en WhatsApp"
-                                        class="text-whatsApp" target="_blank"
-                                        rel="nofollow">
-                                        <i class="fab fa-whatsapp-square"></i>
-                                    </a>
-                                </footer>
-
-                            </article>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="">
-
-                    
-
-                    <aside class="mb-5">
-
-                        <div class="alert alert-primary" role="alert">
-                            <h1 class="text-center h5 mb-0"><strong>Últimos posts</strong></h1>
-                        </div>
-                    
-
-                        
-
-
-
-                       
-                        
-                    </aside>
-
-                    <div class="alert alert-primary" role="alert">
-                        <h1 class="text-center h5 mb-0"><strong>Facebok</strong></h1>
-                    </div>
-
-                    <div class="fan-page">
-
-                        <div class="fb-page w-100" data-href="https://www.facebook.com/codersfree/" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/codersfree/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/codersfree/">Coders Free</a></blockquote></div>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </main>
-
-@endsection
-
- --}}
