@@ -95,6 +95,8 @@
 
 @section('content')
 
+    <div id="fb-root"></div>
+
     {{-- Social-bar --}}
     @include('layouts.partials.social-bar')
 
