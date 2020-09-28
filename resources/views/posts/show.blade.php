@@ -9,10 +9,20 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/default.min.css">
 
     <style>
+        /* Portada */
         .portada{
             position: relative;
         }
 
+        .text-shadow{
+            text-shadow: 2px 2px #282828;
+        }
+
+        .text-shadow-2{
+            text-shadow: 1px 1px #282828;
+        }
+
+        /* Fecha */
         .fecha{
             position: absolute;
             right: 0;
@@ -84,7 +94,6 @@
 @endsection
 
 @section('content')
-    <div id="fb-root"></div>
 
     {{-- Social-bar --}}
     @include('layouts.partials.social-bar')
@@ -243,6 +252,26 @@
         </div>
     </main>
 @endsection
+
+@section('js')
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v7.0&appId=264847741428588&autoLogAppEvents=1" nonce="hnF0HBgN"></script>
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.1/build/highlight.min.js"></script>
+
+    <script>
+        document.getElementById('shareBtn').onclick = function() {
+          FB.ui({
+            display: 'popup',
+            method: 'share',
+            href: '{{request()->fullUrl()}}',
+          }, function(response){});
+        }
+
+        hljs.initHighlightingOnLoad();
+    </script>
+
+@endsection
+
+
 {{-- 
 
 @section('css')
@@ -259,14 +288,7 @@
             text-align: center;
         }
 
-        .text-shadow{
-            text-shadow: 2px 2px #282828;
-        }
-
-        .text-shadow-2{
-            text-shadow: 1px 1px #282828;
-        }
-
+        
 
 
         
@@ -387,20 +409,4 @@
 
 @endsection
 
-@section('js')
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v7.0&appId=264847741428588&autoLogAppEvents=1" nonce="hnF0HBgN"></script>
-    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.1/build/highlight.min.js"></script>
-
-    <script>
-        document.getElementById('shareBtn').onclick = function() {
-          FB.ui({
-            display: 'popup',
-            method: 'share',
-            href: '{{request()->fullUrl()}}',
-          }, function(response){});
-        }
-
-        hljs.initHighlightingOnLoad();
-    </script>
-
-@endsection --}}
+ --}}
