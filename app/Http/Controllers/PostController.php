@@ -62,18 +62,34 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        $contador = $post->contador;
-        $contador++;
 
         if($post->status == 1){
+
             abort(403, 'This action is unauthorized.');
+
         }else{
+
+            $categoria = $post->categoria;
+        
+            $similares = $categoria->posts()
+                                ->orderBy('contador', 'desc')
+                                ->where('id', '<>', $post->id)
+                                ->latest('id')
+                                ->take(5)
+                                ->get();
+            $ultimos = Post::latest('id')
+                            ->where('id', '<>', $post->id)
+                            ->take(5)
+                            ->get();
+
+            $contador = $post->contador;
+            $contador++;
 
             $post->update([
                     'contador' => $contador
             ]);
 
-            return view('posts.show', compact('post'));
+            return view('posts.show', compact('post', 'similares', 'ultimos'));
         }
     }
 
