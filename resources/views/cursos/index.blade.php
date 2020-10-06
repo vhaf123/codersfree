@@ -32,102 +32,103 @@
     @include('layouts.partials.social-bar')
 
     {{-- Portada --}}
-    <section class="portada">
-        <img src="{{Storage::url($page_curso->portada_picture)}}" alt="">
+    <section>
+        <div class="portada">
+            <img src="{{Storage::url($page_curso->portada_picture)}}" alt="">
 
-        <div class="portada-text">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-md-10 col-lg-7 align-self-center">
-                        <h1 class="text-white font-weight-bold">
-                           {{$page_curso->portada_title}}
-                        </h1>
+            <div class="portada-text">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-md-10 col-lg-7 align-self-center">
+                            <h1 class="text-white font-weight-bold">
+                            {{$page_curso->portada_title}}
+                            </h1>
 
-                        <p class="text-white lead">
-                            {{$page_curso->portada_text}}
-                        </p>
+                            <p class="text-white lead">
+                                {{$page_curso->portada_text}}
+                            </p>
 
-                        <form action="{{route('cursos.index')}}">
-                            <div class="input-group">
-                                <input name="search" type="text" class="form-control"  id= "search" placeholder="{{$page_curso->portada_search}}" aria-label="" aria-describedby="basic-addon1">
-                                <div class="input-group-append">
-                                    <button class="btn btn-danger" type="submit">Buscar</button>
+                            <form action="{{route('cursos.index')}}">
+                                <div class="input-group">
+                                    <input name="search" type="text" class="form-control"  id= "search" placeholder="{{$page_curso->portada_search}}" aria-label="" aria-describedby="basic-addon1">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-danger" type="submit">Buscar</button>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    {{-- Filtro --}}
-    <section class="filtro shadow-sm d-none d-md-block">
+        <div class="filtro shadow-sm d-none d-md-block">
 
-        <div class="container">
-    
-            <div class="row">
-                <nav class="col">
+            <div class="container">
+        
+                <div class="row">
+                    <nav class="col">
+                        
+                        <ul class="nav nav-pills py-3">
+        
+                            {{-- Todos los cursos --}}
+                            <li class="nav-item mb-2 mb-lg-0">
+                                <a href="{{route('cursos.index')}}" class="nav-link shadow-sm">
+                                    <i class="fas fa-layer-group"></i>
+                                    Todos los cursos
+                                </a>
+                            </li>
+
+                            {{-- Categorias --}}
+                            <li class="nav-item dropdown mb-2 mb-lg-0">
+                                <a class="nav-link dropdown-toggle dropdown-toggle shadow-sm" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-tags"></i>
+                                    Categorías
+                                </a>
+        
+                                <div class="dropdown-menu">
+        
+                                    @foreach ($categorias as $categoria)
+                                        <a class="dropdown-item" rel="nofollow" href="{{route('cursos.index').'?categoria_id='.$categoria->id}}">{{$categoria->name}}</a>
+                                    @endforeach
+                                    
+                                </div>
+                            </li>
+
+                            {{-- Niveles --}}
+                            <li class="nav-item dropdown mb-2 mb-lg-0">
+                                <a class="nav-link dropdown-toggle dropdown-toggle shadow-sm" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-glasses"></i>
+                                    Niveles
+                                </a>
+        
+                                <div class="dropdown-menu">
+        
+                                    @foreach ($niveles as $nivel)
+                                        <a class="dropdown-item" rel="nofollow" href="{{route('cursos.index').'?nivel_id='.$nivel->id}}">{{$nivel->name}}</a>
+                                    @endforeach
+                                    
+                                </div>
+                            </li>
+
+                            {{-- Estado --}}
+                            <li class="nav-item dropdown mb-2 mb-lg-0">
+                                <a class="nav-link dropdown-toggle dropdown-toggle shadow-sm" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-cogs"></i>
+                                    Estado    
+                                </a>
+        
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" rel="nofollow" href="{{route('cursos.index').'?status=2'}}">En elaboración</a>
+                                    <a class="dropdown-item" rel="nofollow" href="{{route('cursos.index').'?status=3'}}">Culminado</a>
+                                    
+                                </div>
+                            </li>
                     
-                    <ul class="nav nav-pills py-3">
-    
-                        {{-- Todos los cursos --}}
-                        <li class="nav-item mb-2 mb-lg-0">
-                            <a href="{{route('cursos.index')}}" class="nav-link shadow-sm">
-                                <i class="fas fa-layer-group"></i>
-                                Todos los cursos
-                            </a>
-                        </li>
-
-                        {{-- Categorias --}}
-                        <li class="nav-item dropdown mb-2 mb-lg-0">
-                            <a class="nav-link dropdown-toggle dropdown-toggle shadow-sm" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-tags"></i>
-                                Categorías
-                            </a>
-    
-                            <div class="dropdown-menu">
-    
-                                @foreach ($categorias as $categoria)
-                                    <a class="dropdown-item" rel="nofollow" href="{{route('cursos.index').'?categoria_id='.$categoria->id}}">{{$categoria->name}}</a>
-                                @endforeach
-                                
-                            </div>
-                        </li>
-
-                        {{-- Niveles --}}
-                        <li class="nav-item dropdown mb-2 mb-lg-0">
-                            <a class="nav-link dropdown-toggle dropdown-toggle shadow-sm" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-glasses"></i>
-                                Niveles
-                            </a>
-    
-                            <div class="dropdown-menu">
-    
-                                @foreach ($niveles as $nivel)
-                                    <a class="dropdown-item" rel="nofollow" href="{{route('cursos.index').'?nivel_id='.$nivel->id}}">{{$nivel->name}}</a>
-                                @endforeach
-                                
-                            </div>
-                        </li>
-
-                        {{-- Estado --}}
-                        <li class="nav-item dropdown mb-2 mb-lg-0">
-                            <a class="nav-link dropdown-toggle dropdown-toggle shadow-sm" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-cogs"></i>
-                                Estado    
-                            </a>
-    
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" rel="nofollow" href="{{route('cursos.index').'?status=2'}}">En elaboración</a>
-                                <a class="dropdown-item" rel="nofollow" href="{{route('cursos.index').'?status=3'}}">Culminado</a>
-                                
-                            </div>
-                        </li>
-                   
-                    </ul>
-    
-                </nav>
+                        </ul>
+        
+                    </nav>
+                </div>
             </div>
         </div>
     </section>
