@@ -9,74 +9,76 @@
 @endsection
 
 @section('content')
+
     {{-- Portada --}}
-    <section class="portada">
+    <section class="mb-5">
+        <div class="portada">
 
-        <img src="{{Storage::url($home->portada_picture)}}" alt="Portada">
-
-        <div class="portada-text">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-md-10 col-lg-7 align-self-center">
-                        <h1 class=" text-white font-weight-bold">
-                            {{$home->portada_title}}
-                        </h1>
-
-                       
-                        <p class="text-white lead">
-                            {{$home->portada_text}}
-                        </p>
-                       
-
-                        <form action="">
-                            <div class="input-group">
-                                <input type="text" class="form-control" id= "search" placeholder="{{$home->portada_search}}" aria-label="" aria-describedby="basic-addon1">
-                                <div class="input-group-append">
-                                    <button class="btn btn-danger" type="submit">Buscar</button>
+            <img src="{{Storage::url($home->portada_picture)}}" alt="Portada">
+    
+            <div class="portada-text">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-md-10 col-lg-7 align-self-center">
+                            <h1 class=" text-white font-weight-bold">
+                                {{$home->portada_title}}
+                            </h1>
+    
+                           
+                            <p class="text-white lead">
+                                {{$home->portada_text}}
+                            </p>
+                           
+    
+                            <form action="">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id= "search" placeholder="{{$home->portada_search}}" aria-label="" aria-describedby="basic-addon1">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-danger" type="submit">Buscar</button>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    {{-- Degradado --}}
-    <section class="bg-degradado mb-5 py-4 d-none d-md-block">
-        <div class="container">
-            <div class="row text-white">
-                <div class="col-4">
-                    <div class="media">
-                        <i class="{{$home->contenido_icon_1}} mr-4 mt-1 d-sm-none d-lg-block"></i>
-                        <div class="media-body">
-                            <h5 class="mb-0">{{$home->contenido_title_1}}</h5>
-                            {{$home->contenido_subtitle_1}}
+        <div class="bg-degradado py-4 d-none d-md-block">
+            <div class="container">
+                <div class="row text-white">
+                    <div class="col-4">
+                        <div class="media">
+                            <i class="{{$home->contenido_icon_1}} mr-4 mt-1 d-sm-none d-lg-block"></i>
+                            <div class="media-body">
+                                <h5 class="mb-0">{{$home->contenido_title_1}}</h5>
+                                {{$home->contenido_subtitle_1}}
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-4">
-                    <div class="media">
-                        <i class="{{$home->contenido_icon_2}} mr-4 mt-1 d-sm-none d-lg-block"></i>
-                        <div class="media-body">
-                            <h5 class="mb-0">{{$home->contenido_title_2}}</h5>
-                            {{$home->contenido_subtitle_2}}
+    
+                    <div class="col-4">
+                        <div class="media">
+                            <i class="{{$home->contenido_icon_2}} mr-4 mt-1 d-sm-none d-lg-block"></i>
+                            <div class="media-body">
+                                <h5 class="mb-0">{{$home->contenido_title_2}}</h5>
+                                {{$home->contenido_subtitle_2}}
+                            </div>
                         </div>
                     </div>
-                </div>
-
-
-                <div class="col-4">
-                    <div class="media">
-                        <i class="{{$home->contenido_icon_3}} mr-4 mt-1 d-sm-none d-lg-block"></i>
-                        <div class="media-body">
-                            <h5 class="mb-0">{{$home->contenido_title_3}}</h5>
-                            {{$home->contenido_subtitle_3}}
+    
+    
+                    <div class="col-4">
+                        <div class="media">
+                            <i class="{{$home->contenido_icon_3}} mr-4 mt-1 d-sm-none d-lg-block"></i>
+                            <div class="media-body">
+                                <h5 class="mb-0">{{$home->contenido_title_3}}</h5>
+                                {{$home->contenido_subtitle_3}}
+                            </div>
                         </div>
                     </div>
+    
                 </div>
-
             </div>
         </div>
     </section>
@@ -138,17 +140,13 @@
     {{-- Ayuda --}}
     <section class="ayuda my-5 bg-oscuro">
             
-        <div class="container d-flex">
+        <div class="container py-5">
+            <h2 class="text-white text-center"><strong>¿No sabes qué curso llevar?</strong></h2>
+            <p class="text-white text-center">Dirígete al catálogo de cursos y filtralos por categoría o nivel</p>
 
-            <div class="col-12 py-5">
-                <h2 class="text-white text-center"><strong>¿No sabes qué curso llevar?</strong></h2>
-                <p class="text-white text-center">Dirígete al catálogo de cursos y filtralos por categoría o nivel</p>
-
-                <div class="d-flex justify-content-center">
-                    <a href="{{route('cursos.index')}}" class="btn btn-danger">Catálogo de cursos</a>
-                </div>
+            <div class="d-flex justify-content-center">
+                <a href="{{route('cursos.index')}}" class="btn btn-danger">Catálogo de cursos</a>
             </div>
-
         </div>
 
     </section>
@@ -156,38 +154,35 @@
     {{-- Cursos --}}
     <section class="cursos pt-5">
         <div class="container">
+            <h1 class="h2 text-center mb-0 text-secondary">ALGUNO DE LOS CURSOS</h1>
+            <p class="text-center mb-4">Trabajo duro para seguir subiendo cursos</p>
+
             <div class="row">
-                <div class="col">
 
-                    <h1 class="h2 text-center mb-0 text-secondary">ALGUNO DE LOS CURSOS</h1>
-                    <p class="text-center mb-4">Trabajo duro para seguir subiendo cursos</p>
-
-                    <div class="row">
-
-                        @forelse ($cursos as $curso)
-                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-                                @include('cursos.partials.card-curso')
-                            </div>
-                        @empty
-                            <div class="col-12">
-                                <div class="alert alert-primary text-center" role="alert">
-                                    <strong>Aquí aparecerá los cursos más contratados</strong>
-                                </div>
-                            </div>
-                        @endforelse
-                        
+                @forelse ($cursos as $curso)
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                        @include('cursos.partials.card-curso')
                     </div>
-
-                </div>
+                @empty
+                    <div class="col-12">
+                        <div class="alert alert-primary text-center" role="alert">
+                            <strong>Aquí aparecerá los cursos más contratados</strong>
+                        </div>
+                    </div>
+                @endforelse
+                
             </div>
+        
         </div>
     </section>
 
     {{-- Ventajas --}}
     <section class="ventajas my-5 pt-5 bg-gris text-secondary">
-        <h1 class="text-center h2 mb-4">VENTAJAS</h1>
 
         <div class="container">
+
+            <h1 class="text-center h2 mb-4">VENTAJAS</h1>
+            
             <div class="row">
                 
                 <div class="col-12 col-sm-6 col-md-4 mb-5">
@@ -228,6 +223,9 @@
 
         <div class="container-fluid bg-oscuro">
             <div class="row">
+
+
+                {{-- Imagen --}}
                 <div class="col-12 col-lg-6 px-0">
                     @if ($home->nuevo_contenido_picture)
                         <img src="{{Storage::url($home->nuevo_contenido_picture)}}" alt="Card image cap" style="width:100%">
@@ -236,6 +234,7 @@
                     @endif
                 </div>
 
+                {{-- Informacion --}}
                 <div class="col-12 col-lg-6  py-5 py-lg-0 align-self-center">
 
                     <h2 class="text-center text-white">
