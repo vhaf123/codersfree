@@ -96,7 +96,7 @@
     </nav>
 
     <div class="row">
-        <nav class="col-12 col-md-4 text-secondary mb-4">
+        <aside class="col-12 col-md-4 text-secondary mb-4">
             <div class="card shadow">
                 <div class="card-body">
 
@@ -139,7 +139,7 @@
 
                 </div>
             </div>
-        </nav>
+        </aside>
 
         <main class="col-12 col-md-8">
             <div class="card">
