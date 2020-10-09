@@ -86,18 +86,16 @@
 @include('layouts.partials.social-bar')
 
 <div class="container mt-4">
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{route('laravel.index')}}">Documentación de Laravel 8 en español</a></li>
+            <li class="breadcrumb-item active" aria-current="page">@if ($actual) {{$actual->name}} @else No hay ningún tema agregado @endif</li>
+        </ol>
+    </nav>
+
     <div class="row">
-
-        <div class="col-12">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
-                    <li class="breadcrumb-item"><a href="{{route('laravel.index')}}">Documentación de Laravel 8 en español</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">@if ($actual) {{$actual->name}} @else No hay ningún tema agregado @endif</li>
-                </ol>
-            </nav>
-        </div>
-
         <nav class="col-12 col-md-4 text-secondary mb-4">
             <div class="card shadow">
                 <div class="card-body">
@@ -143,7 +141,7 @@
             </div>
         </nav>
 
-        <div class="col-12 col-md-8">
+        <main class="col-12 col-md-8">
             <div class="card">
                 <div class="card-body text-secondary">
                     <h1 class="my-3 text-center text-uppercase h2">{{$actual->name}}</h1>
@@ -168,10 +166,9 @@
                     
                 </div>
             </div>
-        </div>
-
-        
+        </main>
     </div>
+ 
 </div>
 
 @endsection
