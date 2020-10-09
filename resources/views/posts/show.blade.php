@@ -177,7 +177,7 @@
                                 <ul class="pl-3">
                                     @foreach ($similares as $similar)
                                         <li>
-                                            <a href="">
+                                            <a href="{{route('posts.show', $similar)}}">
                                                 {{$similar->name}}
                                             </a>
                                         </li>

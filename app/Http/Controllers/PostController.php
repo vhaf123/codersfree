@@ -23,7 +23,7 @@ class PostController extends Controller
         $posts =Post::where('status', '!=', 1)
                     ->search($search)
                     ->latest()
-                    ->paginate(9);
+                    ->paginate(11);
 
         $populares = Post::where('status', '!=', 1)
                     ->latest('contador')
