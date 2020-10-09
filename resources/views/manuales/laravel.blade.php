@@ -87,15 +87,16 @@
 
 <div class="container mt-4">
 
-    <nav aria-label="breadcrumb">
+    <aside aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
             <li class="breadcrumb-item"><a href="{{route('laravel.index')}}">Documentación de Laravel 8 en español</a></li>
             <li class="breadcrumb-item active" aria-current="page">@if ($actual) {{$actual->name}} @else No hay ningún tema agregado @endif</li>
         </ol>
-    </nav>
+    </aside>
 
     <div class="row">
+
         <aside class="col-12 col-md-4 text-secondary mb-4">
             <div class="card shadow">
                 <div class="card-body">
