@@ -167,7 +167,7 @@
                     
                     {{-- Contenido principal --}}
                     <div class="card shadow-lg">
-                        <article class="card-body px-5">
+                        <article class="card-body px-md-5">
                             <h1>{!!$post->name!!}</h1>
                             {!!$post->body!!}
                             
