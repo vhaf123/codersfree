@@ -167,10 +167,11 @@
                     
                     {{-- Contenido principal --}}
                     <div class="card shadow-lg">
-                        <article class="card-body">
-                            <h1>{{$post->name}}</h1>
+                        <article class="card-body px-5">
+                            <h1>{!!$post->name!!}</h1>
                             {!!$post->body!!}
-
+                            
+                        
                             {{-- Te puede interesar --}}
                             <aside class="alert alert-primary mt-4" role="alert">
                                 <h1 class="h4">ARTÍCULOS SIMILARES:</h1>
