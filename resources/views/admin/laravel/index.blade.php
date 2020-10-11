@@ -129,8 +129,6 @@
             responsive: true,
             autoWidth: false,
 
-            order: [ 0, 'desc' ],
-
             language: {
                     "lengthMenu": "Mostrar " + 
                                 `<select class="custom-select custom-select-sm form-control form-control-sm">

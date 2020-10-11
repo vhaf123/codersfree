@@ -21,12 +21,12 @@ class ManualSeeder extends Seeder
             'status' => 2
         ]);
 
-        factory(Capitulo::class, 5)->create([
+        /* factory(Capitulo::class, 5)->create([
             'manual_id' => $manual->id
         ])->each(function($capitulo){
             factory(Tema::class, 5)->create([
                 'capitulo_id' => $capitulo->id
             ]);
-        });
+        }); */
     }
 }

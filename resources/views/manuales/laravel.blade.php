@@ -78,6 +78,10 @@
             max-width: 1250px;
         }
 
+        h2 > a{
+            text-decoration: none!important;
+        }
+
     </style>
 @endsection
 
