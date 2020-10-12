@@ -82,6 +82,11 @@
             text-decoration: none!important;
         }
 
+        .grid-container{
+            display: grid;
+            grid-template-columns: [x0] 1fr [x1] 1fr [x2] 1fr [x3];
+        }
+
     </style>
 @endsection
 
