@@ -105,6 +105,33 @@
     </aside>
 
     <div class="row">
+        
+        <main class="col-12 col-md-8">
+            <div class="card">
+                <div class="card-body text-secondary">
+                    <h1 class="my-3 text-center text-uppercase h2">{{$actual->name}}</h1>
+
+
+                    <div class="alert alert-success" role="alert">
+                        Todo el contenido de esta plataforma es creado por una única persona. Si te interesaría convertirte en mi mecenas, puedes hacerlo desde <a href="https://www.patreon.com/bePatron?u=42986499" target="_blank" class="text-decoration-none"><strong>mi cuenta de patreon</strong></a>
+                    </div>
+
+                    <div class="principal">
+
+                        @if ($actual)
+                            
+                            {!!$actual->body!!}
+
+                        @else
+                            <div class="alert alert-danger" role="alert">
+                                <strong>No se ha agregado ningún tema aún</strong>
+                            </div>
+                        @endif
+                    </div>
+                    
+                </div>
+            </div>
+        </main>
 
         <aside class="col-12 col-md-4 text-secondary mb-4">
             <div class="card shadow">
@@ -151,32 +178,7 @@
             </div>
         </aside>
 
-        <main class="col-12 col-md-8">
-            <div class="card">
-                <div class="card-body text-secondary">
-                    <h1 class="my-3 text-center text-uppercase h2">{{$actual->name}}</h1>
-
-
-                    <div class="alert alert-success" role="alert">
-                        Todo el contenido de esta plataforma es creado por una única persona. Si te interesaría convertirte en mi mecenas, puedes hacerlo desde <a href="https://www.patreon.com/bePatron?u=42986499" target="_blank" class="text-decoration-none"><strong>mi cuenta de patreon</strong></a>
-                    </div>
-
-                    <div class="principal">
-
-                        @if ($actual)
-                            
-                            {!!$actual->body!!}
-
-                        @else
-                            <div class="alert alert-danger" role="alert">
-                                <strong>No se ha agregado ningún tema aún</strong>
-                            </div>
-                        @endif
-                    </div>
-                    
-                </div>
-            </div>
-        </main>
+        
     </div>
  
 </div>
