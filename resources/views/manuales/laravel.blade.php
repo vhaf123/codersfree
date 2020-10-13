@@ -104,8 +104,8 @@
         </ol>
     </aside>
 
-    <div class="row">
-        
+    <div class="row mb-4">
+
         <main class="col-12 col-md-8">
             <div class="card">
                 <div class="card-body text-secondary">
