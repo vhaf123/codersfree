@@ -41,13 +41,12 @@
     </section>
 
     <main class="container mt-4 mb-5">
+
         <div class="row">
             <div class="col-12 col-lg-8">
-
-                <div class="">
-                    {{-- Publicidad --}}
+                <div>
+                    
                     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- Horizontal -->
                     <ins class="adsbygoogle"
                         style="display:block"
                         data-ad-client="ca-pub-8456964757737909"
@@ -60,6 +59,60 @@
                 </div>
 
 
+                <div class="row">
+
+                    @forelse ($posts as $post)
+
+                        @if ($loop->first)
+
+                            <div class="col-12 mb-4">
+                                @include('posts.partials.card-post')
+                            </div>
+                            
+                        @else
+
+                            <div class="col-12 col-md-6 mb-4">
+                                @include('posts.partials.card-post')
+                            </div>
+
+                        @endif
+                        
+                    @empty
+                        <div class="col-12">
+                            <div class="alert alert-primary text-center" role="alert">
+                                <strong>No se ha encontrado ningún artículo con esa descripción</strong>
+                            </div>
+                        </div>
+                    @endforelse
+
+                </div>
+
+
+            </div>
+
+            <div class="col-4 d-none d-lg-block">
+
+
+                <h1 class="h3 text-center text-dark mb-4">Artículos populares</h1>
+
+                @forelse ($populares as $post)
+                    <div class="mb-4">
+                        @include('posts.partials.card-populares')
+                    </div>
+                @empty
+                    
+                @endforelse
+
+            </div>
+        </div>
+
+
+
+
+        {{-- <div class="row">
+            <div class="col-12 col-lg-8">
+
+              
 
                 <div class="row">
 
@@ -93,7 +146,6 @@
 
             <div class="col-4 d-none d-lg-block">
 
-                {{-- <h1 class="mb-0 h4 bg-oscuro text-center text-white py-2 mb-4 shadow">Populares</h1> --}}
 
                 <h1 class="h3 text-center text-dark mb-4">Artículos populares</h1>
 
@@ -106,7 +158,7 @@
                 @endforelse
 
             </div>
-        </div>
+        </div> --}}
 
         {{$posts->appends(request()->all())->links()}}
     </main>
