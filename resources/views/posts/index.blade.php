@@ -44,7 +44,7 @@
 
         <div class="row">
             <div class="col-12 col-lg-8">
-                <div>
+                <div class="mb-0">
                     
                     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                     <ins class="adsbygoogle"
