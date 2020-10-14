@@ -67,7 +67,7 @@
         }
 
         .principal p, .principal li{
-            color: #636b6f;
+            /* color: #636b6f; */
         }
 
         .fa-angle-left, .fa-angle-right{
