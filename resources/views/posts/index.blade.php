@@ -52,9 +52,9 @@
 
                             <div class="col-12 mb-4">
                                 @include('posts.partials.card-post')
-                            </div>
 
-                            <div class="col-12">
+
+                                {{-- Publicidad --}}
                                 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                                 <!-- Horizontal -->
                                 <ins class="adsbygoogle"
@@ -66,6 +66,7 @@
                                 <script>
                                     (adsbygoogle = window.adsbygoogle || []).push({});
                                 </script>
+
                             </div>
 
                         @else
