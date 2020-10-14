@@ -109,9 +109,9 @@
                     <ins class="adsbygoogle"
                         style="display:block"
                         data-ad-format="fluid"
-                        data-ad-layout-key="-77+e7+3a-76+4y"
+                        data-ad-layout-key="-74+cn+3r-1o+36"
                         data-ad-client="ca-pub-8456964757737909"
-                        data-ad-slot="6098071151"></ins>
+                        data-ad-slot="1907367096"></ins>
                     <script>
                         (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
