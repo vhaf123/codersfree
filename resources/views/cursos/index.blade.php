@@ -162,9 +162,6 @@
 
                     </div>
 
-
-                    
-
                 @empty
                     <div class="col-12">
                         <div class="alert alert-primary text-center" role="alert">
@@ -172,6 +169,20 @@
                         </div>
                     </div>
                 @endforelse
+
+                <article class="col-12 col-sm-6 col-md-4 col-lg-3 mb-5 d-md-none">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle"
+                        style="display:block"
+                        data-ad-format="fluid"
+                        data-ad-layout-key="-71+cl+3w-1v+3f"
+                        data-ad-client="ca-pub-8456964757737909"
+                        data-ad-slot="2004086935"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                    
+                </article>
                     
             </div>
     

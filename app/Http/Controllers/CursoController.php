@@ -41,7 +41,7 @@ class CursoController extends Controller
                     ->categoria($categoria_id)
                     ->nivel($nivel_id)
                     ->status($status)
-                    ->paginate(7);
+                    ->paginate(6);
                             
         $categorias = Categoria::all();
 
