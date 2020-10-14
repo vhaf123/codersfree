@@ -29,7 +29,7 @@ class HomeController extends Controller
         $cursos = Curso::orderBy('users_count', 'desc')
                 ->latest('id')
                 ->where('status', '!=', 1)
-                ->take(8)
+                ->take(7)
                 ->get();
 
         $cursos_publicados = Curso::where('status', '!=', 1)->count();
