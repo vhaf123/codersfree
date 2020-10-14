@@ -102,6 +102,22 @@
                     <p>{{$home->contenido_text_1}}</p>
                 </article>
 
+
+
+                <article class="col-12 col-sm-6 col-md-4 col-lg-3 mb-5">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle"
+                        style="display:block"
+                        data-ad-format="fluid"
+                        data-ad-layout-key="-77+e7+3a-76+4y"
+                        data-ad-client="ca-pub-8456964757737909"
+                        data-ad-slot="6098071151"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </article>
+
+
                 <article class="col-12 col-sm-6 col-md-4 col-lg-3 mb-5">
                     
                     <a class="card-img" href="{{route('laravel.index')}}">
