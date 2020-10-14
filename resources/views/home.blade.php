@@ -153,9 +153,9 @@
                     <ins class="adsbygoogle"
                         style="display:block"
                         data-ad-format="fluid"
-                        data-ad-layout-key="-77+e7+3a-76+4y"
+                        data-ad-layout-key="-71+cl+3w-1v+3f"
                         data-ad-client="ca-pub-8456964757737909"
-                        data-ad-slot="6098071151"></ins>
+                        data-ad-slot="2004086935"></ins>
                     <script>
                         (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
