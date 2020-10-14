@@ -136,24 +136,7 @@
     <main class="my-5">
 
         <div class="container">
-            
-            <div>
-                {{-- Publicidad --}}
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- Horizontal -->
-                <ins class="adsbygoogle"
-                    style="display:block"
-                    data-ad-client="ca-pub-8456964757737909"
-                    data-ad-slot="6924406974"
-                    data-ad-format="auto"
-                    data-full-width-responsive="true"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
-
-
-
+         
             <h1 class="h2 mb-3 d-lg-none">Lista de cursos</h1>
             <div class="row">
 
