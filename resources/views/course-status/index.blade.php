@@ -117,7 +117,7 @@
                             </div>
                         </div>
 
-                        <div class="mt-4">
+                        <div class="my-4">
                             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                             <!-- Horizontal -->
                             <ins class="adsbygoogle"
