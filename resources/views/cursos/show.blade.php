@@ -370,7 +370,7 @@
                 </section>
 
                 <aside class="text-secondary d-none d-lg-block">
-                    @forelse ($similares as $similar)
+                    @foreach ($similares as $similar)
 
                         @if ($loop->last)
                             <div class="mb-3">
@@ -426,9 +426,9 @@
                             </div>
                         @endif
 
-                    @empty
+                    @endforeach
                         
-                    @endforelse
+                    
                 </aside>
             </div>
         </div>
