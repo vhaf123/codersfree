@@ -370,7 +370,7 @@
                 </section>
 
                 <aside class="text-secondary d-none d-lg-block">
-                    @foreach ($similares as $similar)
+                    @forelse ($similares as $similar)
 
                         @if ($loop->last)
                             <div class="mb-3">
@@ -426,9 +426,19 @@
                             </div>
                         @endif
 
-                    @endforeach
-                        
-                    
+                    @empty
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <!-- recomendacion_cuadrado -->
+                        <ins class="adsbygoogle"
+                            style="display:block"
+                            data-ad-client="ca-pub-8456964757737909"
+                            data-ad-slot="2003747628"
+                            data-ad-format="auto"
+                            data-full-width-responsive="true"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    @endforelse
                 </aside>
             </div>
         </div>
