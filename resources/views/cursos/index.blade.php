@@ -149,7 +149,7 @@
                         data-ad-format="fluid"
                         data-ad-layout-key="-74+cn+3r-1o+36"
                         data-ad-client="ca-pub-8456964757737909"
-                        data-ad-slot="1907367096"></ins>
+                        data-ad-slot="3727892830"></ins>
                     <script>
                         (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
