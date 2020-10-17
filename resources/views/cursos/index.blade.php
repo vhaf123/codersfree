@@ -140,22 +140,6 @@
             <h1 class="h2 mb-3 d-lg-none">Lista de cursos</h1>
             <div class="row">
 
-                {{-- Publicidad --}}
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
-                    
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <ins class="adsbygoogle"
-                        style="display:block"
-                        data-ad-format="fluid"
-                        data-ad-layout-key="-74+cn+3r-1o+36"
-                        data-ad-client="ca-pub-8456964757737909"
-                        data-ad-slot="3727892830"></ins>
-                    <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-
-                </div>
-
 
                 @forelse ($cursos as $curso)
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
@@ -171,7 +155,8 @@
                         </div>
                     </div>
                 @endforelse
-
+                
+                {{-- Publicidad --}}
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
                     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                     <ins class="adsbygoogle"
