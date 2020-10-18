@@ -114,9 +114,26 @@
 
                 <ul class="list-unstyled">
                     @foreach ($populares as $post)
+
+                        @if ($loop->last)
+                            <li>
+                                <x-publicidad.recomendacion />
+                            </li>
+                        @endif
+
                         <li>
                             <x-articulos-recomendados :post="$post" />
                         </li>
+
+
+                        @if ($loop->first)
+
+                            <li>
+                                <x-publicidad.recomendacion />
+                            </li>
+                        @endif
+
+
                     @endforeach
                 </ul>
 
