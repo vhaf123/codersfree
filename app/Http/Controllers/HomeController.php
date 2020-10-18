@@ -26,8 +26,7 @@ class HomeController extends Controller
     public function index()
     {
 
-        $cursos = Curso::orderBy('users_count', 'desc')
-                ->latest('id')
+        $cursos = Curso::latest('id')
                 ->where('status', '!=', 1)
                 ->take(7)
                 ->get();

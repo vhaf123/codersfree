@@ -183,7 +183,7 @@
     {{-- Cursos --}}
     <section class="cursos pt-5">
         <div class="container">
-            <h1 class="h2 text-center mb-0 text-secondary">ALGUNO DE LOS CURSOS</h1>
+            <h1 class="h2 text-center mb-0 text-secondary">ÚLTIMOS CURSOS</h1>
             <p class="text-center mb-4">Trabajo duro para seguir subiendo cursos</p>
 
             <div class="row">
