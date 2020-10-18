@@ -120,11 +120,8 @@
             </div>
 
             <div class="col-4 d-none d-lg-block">
+              
                 
-
-                <x-publicidad.cuadrado />
-
-
                 <h1 class="h3 text-center text-dark mb-4">Artículos populares</h1>
 
                 <ul class="list-unstyled">
@@ -152,14 +149,8 @@
                     @endforeach
                 </ul>
 
-                {{-- @forelse ($populares as $post)
-                    <div class="mb-4">
-                        <x-articulos-recomendados :post="$post" />
-                    </div>
-                @empty
-                    
-                @endforelse --}}
-
+                <x-publicidad.cuadrado />
+                
             </div>
         </div>
 
