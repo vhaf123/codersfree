@@ -116,7 +116,7 @@
                     @foreach ($populares as $post)
 
                         @if ($loop->last)
-                            <li>
+                            <li class="mb-2">
                                 <x-publicidad.recomendacion />
                             </li>
                         @endif
@@ -128,7 +128,7 @@
 
                         @if ($loop->first)
 
-                            <li>
+                            <li class="mb-2">
                                 <x-publicidad.recomendacion />
                             </li>
                         @endif
