@@ -206,6 +206,11 @@
                     </div>
                 </section>
 
+                {{-- Publicidad --}}
+                <div class="mb-4">
+                    <x-publicidad.horizontal />
+                </div>
+
                 {{-- Valoraciones --}}
                 <section class="mb-4">
 
@@ -258,10 +263,6 @@
 
 
                 </section>
-
-                <div class="mb-4">
-                    <x-publicidad.horizontal />
-                </div>
 
                 {{-- Reviews --}}
                 @can('matriculado', $curso)
