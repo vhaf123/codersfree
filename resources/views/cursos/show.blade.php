@@ -374,7 +374,8 @@
 
                         @if ($loop->last)
                             <div class="mb-3">
-                                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                                <x-publicidad.recomendacion />
+                                {{-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                                 <ins class="adsbygoogle"
                                     style="display:block"
                                     data-ad-format="fluid"
@@ -383,7 +384,7 @@
                                     data-ad-slot="5970912799"></ins>
                                 <script>
                                     (adsbygoogle = window.adsbygoogle || []).push({});
-                                </script>
+                                </script> --}}
                             </div>
                         @endif
 
@@ -413,7 +414,8 @@
                         @if ($loop->first)
 
                             <div class="mb-3">
-                                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                                <x-publicidad.recomendacion />
+                                {{-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                                 <ins class="adsbygoogle"
                                     style="display:block"
                                     data-ad-format="fluid"
@@ -422,7 +424,7 @@
                                     data-ad-slot="5970912799"></ins>
                                 <script>
                                     (adsbygoogle = window.adsbygoogle || []).push({});
-                                </script>
+                                </script> --}}
                             </div>
                         @endif
 

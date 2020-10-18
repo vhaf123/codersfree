@@ -13,6 +13,37 @@
             background-color: rgba(52, 58, 64, 0.5);
             color: white;
         }
+
+        /* Artículos similares */
+
+        .media-img{
+            display: block;
+            background-color: red;
+            display: block;
+            position: relative;
+            width: 50%;
+        }
+
+        .media-img img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .media-img::before{
+            content: '';
+            display: block;
+            padding-top: 56.25%
+        }
+
+        @media (max-width: 1200px) {
+            .media-img::before{
+                padding-top: 75%
+            }
+        }
     </style>
 
 @endsection
@@ -81,70 +112,24 @@
 
                 <h1 class="h3 text-center text-dark mb-4">Artículos populares</h1>
 
-                @forelse ($populares as $post)
+                <ul class="list-unstyled">
+                    @foreach ($populares as $post)
+                        <li>
+                            <x-articulos-recomendados :post="$post" />
+                        </li>
+                    @endforeach
+                </ul>
+
+                {{-- @forelse ($populares as $post)
                     <div class="mb-4">
-                        @include('posts.partials.card-populares')
+                        <x-articulos-recomendados :post="$post" />
                     </div>
                 @empty
                     
-                @endforelse
+                @endforelse --}}
 
             </div>
         </div>
-
-
-
-
-        {{-- <div class="row">
-            <div class="col-12 col-lg-8">
-
-              
-
-                <div class="row">
-
-                    @forelse ($posts as $post)
-
-                        @if ($loop->first)
-
-                            <div class="col-12 mb-4">
-                                @include('posts.partials.card-post')
-                            </div>
-                            
-                        @else
-
-                            <div class="col-12 col-md-6 mb-4">
-                                @include('posts.partials.card-post')
-                            </div>
-
-                        @endif
-                        
-                    @empty
-                        <div class="col-12">
-                            <div class="alert alert-primary text-center" role="alert">
-                                <strong>No se ha encontrado ningún artículo con esa descripción</strong>
-                            </div>
-                        </div>
-                    @endforelse
-
-                </div>
-
-            </div>
-
-            <div class="col-4 d-none d-lg-block">
-
-
-                <h1 class="h3 text-center text-dark mb-4">Artículos populares</h1>
-
-                @forelse ($populares as $post)
-                    <div class="mb-4">
-                        @include('posts.partials.card-populares')
-                    </div>
-                @empty
-                    
-                @endforelse
-
-            </div>
-        </div> --}}
 
         {{$posts->appends(request()->all())->links()}}
     </main>

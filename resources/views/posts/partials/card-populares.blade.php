@@ -1,4 +1,3 @@
-{{-- <a href="{{route('posts.show', $post)}}" class="btn-block h-100 text-decoration-none"> --}}
 <div class="card shadow h-100">
 
     <div class="card-img">
@@ -12,9 +11,6 @@
                         <span class="badge {{$tag->background}}">
                             {{$tag->name}}
                         </span>
-                        {{-- <a href="{{route('tags.show', $tag)}}" class="text-decoration-none">
-                            
-                        </a> --}}
                     </p>
 
                     
@@ -40,8 +36,6 @@
         <h1 class="h4 text-dark">
             <a href="{{route('posts.show', $post)}}" class="text-secondary text-decoration-none">{{$post->name}}</a>
         </h1>
-        
-        
     </div>
 </div>
 
