@@ -108,6 +108,9 @@
             </div>
 
             <div class="col-4 d-none d-lg-block">
+                
+
+                <x-publicidad.cuadrado />
 
 
                 <h1 class="h3 text-center text-dark mb-4">Artículos populares</h1>
