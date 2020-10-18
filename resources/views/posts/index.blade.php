@@ -88,6 +88,18 @@
                             
                         @else
 
+
+                            @if ($loop->index == 2)
+                                <div class="col-12 col-md-6 mb-4">
+                                    <x-publicidad.articulo />
+                                </div>
+
+                                <div class="col-12 col-md-6 mb-4">
+                                    <x-publicidad.articulo />
+                                </div>
+                            @endif
+
+
                             <div class="col-12 col-md-6 mb-4">
                                 @include('posts.partials.card-post')
                             </div>
