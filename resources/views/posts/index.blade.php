@@ -138,7 +138,7 @@
                         </li>
 
 
-                        @if ($loop->first)
+                        @if ($loop->index == 1)
 
                             <li class="mb-3">
                                 <x-publicidad.recomendacion />
