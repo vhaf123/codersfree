@@ -259,6 +259,10 @@
 
                 </section>
 
+                <div class="mb-4">
+                    <x-publicidad.horizontal />
+                </div>
+
                 {{-- Reviews --}}
                 @can('matriculado', $curso)
                     <section class="mb-2">
