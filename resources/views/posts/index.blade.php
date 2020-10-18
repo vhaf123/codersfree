@@ -89,7 +89,7 @@
                         @else
 
 
-                            @if ($loop->index == 2)
+                            @if ($loop->index == 4)
                                 <div class="col-12 col-md-6 mb-4">
                                     <x-publicidad.articulo />
                                 </div>
