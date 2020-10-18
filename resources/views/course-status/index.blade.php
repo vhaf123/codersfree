@@ -117,7 +117,7 @@
                             </div>
                         </div>
 
-                        <div class="my-4 d-md-none">
+                        <div class="my-4 d-lg-none">
                             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                             <!-- Horizontal -->
                             <ins class="adsbygoogle"
