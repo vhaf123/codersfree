@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', $curso->descripcion)
-@section('description', $curso->description)
+@section('title', $curso->title)
+@section('description', $curso->descripcion)
 @section('image', Storage::url($curso->picture))
 
 @section('css')
