@@ -122,7 +122,10 @@
             <div class="col-4 d-none d-lg-block">
               
                 
-                <h1 class="h3 text-center text-dark mb-4">Artículos populares</h1>
+                {{-- <h1 class="h3 text-center text-dark mb-4">Artículos populares</h1> --}}
+                <div class="alert alert-primary text-center" role="alert">
+                    <strong>Artículos populares</strong>
+                </div>
 
                 <ul class="list-unstyled">
                     @foreach ($populares as $post)
