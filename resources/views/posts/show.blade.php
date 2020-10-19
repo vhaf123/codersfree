@@ -272,6 +272,8 @@
                             @endforeach
                         </ul>
 
+                        <x-publicidad.cuadrado />
+
                     </aside>
                 </div>
             </div>
