@@ -28,7 +28,7 @@ class PostController extends Controller
         $populares = Post::where('status', '!=', 1)
                     ->latest('contador')
                     ->get()
-                    ->take(5);
+                    ->take(4);
 
         return view('posts.index', compact('pagePost','posts', 'populares'));
     }

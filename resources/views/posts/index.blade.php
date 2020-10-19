@@ -130,12 +130,6 @@
                 <ul class="list-unstyled">
                     @foreach ($populares as $post)
 
-                        @if ($loop->last)
-                            <li class="mb-3">
-                                <x-publicidad.recomendacion />
-                            </li>
-                        @endif
-
                         <li>
                             <x-articulos-recomendados :post="$post" />
                         </li>
@@ -143,6 +137,12 @@
 
                         @if ($loop->index == 1)
 
+                            <li class="mb-3">
+                                <x-publicidad.recomendacion />
+                            </li>
+                        @endif
+
+                        @if ($loop->last)
                             <li class="mb-3">
                                 <x-publicidad.recomendacion />
                             </li>
