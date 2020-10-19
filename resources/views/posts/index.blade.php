@@ -91,11 +91,11 @@
 
                             @if ($loop->index == 4)
                                 <div class="col-12 col-md-6 mb-4">
-                                    <x-publicidad.articulo />
+                                    <x-publicidad.articulo1 />
                                 </div>
 
                                 <div class="col-12 col-md-6 mb-4">
-                                    <x-publicidad.articulo />
+                                    <x-publicidad.articulo2 />
                                 </div>
                             @endif
 
