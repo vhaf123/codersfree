@@ -254,6 +254,21 @@
                                 <li>
                                     <x-articulos-recomendados :post="$ultimo" />
                                 </li>
+
+
+                                @if ($loop->index == 1)
+
+                                    <li class="mb-3">
+                                        <x-publicidad.recomendacion />
+                                    </li>
+                                @endif
+
+                                @if ($loop->last)
+                                    <li class="mb-3">
+                                        <x-publicidad.recomendacion />
+                                    </li>
+                                @endif
+
                             @endforeach
                         </ul>
 
