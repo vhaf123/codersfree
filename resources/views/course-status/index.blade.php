@@ -137,13 +137,12 @@
 
                     <div class="mb-4 d-none d-lg-block">
                         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                        <!-- cuadrado -->
                         <ins class="adsbygoogle"
                             style="display:block"
+                            data-ad-format="fluid"
+                            data-ad-layout-key="-fb+5w+4e-db+86"
                             data-ad-client="ca-pub-8456964757737909"
-                            data-ad-slot="7578334477"
-                            data-ad-format="auto"
-                            data-full-width-responsive="true"></ins>
+                            data-ad-slot="2717013746"></ins>
                         <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
                         </script>
