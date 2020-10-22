@@ -117,7 +117,7 @@
                             </div>
                         </div>
 
-                        <div class="my-4">
+                        <div class="my-4 d-lg-none">
                             <x-publicidad.horizontal/>
                         </div>
                     </main>
