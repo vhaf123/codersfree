@@ -160,17 +160,17 @@
         <main class="col-12 col-md-8">
             <div class="card">
                 <div class="card-body text-secondary">
-                    <h1 class="my-3 text-center text-uppercase h2">{{$actual->name}}</h1>
+                    {{-- <h1 class="my-3 text-center text-uppercase h2">{{$actual->name}}</h1> --}}
 
 
-                    <div class="alert alert-success" role="alert">
+                    <div class="alert alert-danger" role="alert">
                         Todo el contenido de esta plataforma es creado por una única persona. Si te interesaría convertirte en mi mecenas, puedes hacerlo desde <a href="https://www.patreon.com/bePatron?u=42986499" target="_blank" class="text-decoration-none"><strong>mi cuenta de patreon</strong></a>
                     </div>
 
 
-                    <div class="my-3">
+                  {{--   <div class="my-3">
                         <x-publicidad.in-article/>
-                    </div>
+                    </div> --}}
 
 
                     <div class="principal">
