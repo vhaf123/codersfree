@@ -152,17 +152,8 @@
                 </div>
             </div>
 
-            <div class="mb-3">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <ins class="adsbygoogle"
-                    style="display:block; text-align:center;"
-                    data-ad-layout="in-article"
-                    data-ad-format="fluid"
-                    data-ad-client="ca-pub-8456964757737909"
-                    data-ad-slot="8744238188"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
+            <div class="mb-4">
+                <x-publicidad.horizontal/>
             </div>
         </aside>
 
@@ -177,7 +168,18 @@
                     </div>
 
 
-                    <x-publicidad.articulo1/>
+                    <div class="my-3">
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <ins class="adsbygoogle"
+                            style="display:block; text-align:center;"
+                            data-ad-layout="in-article"
+                            data-ad-format="fluid"
+                            data-ad-client="ca-pub-8456964757737909"
+                            data-ad-slot="8744238188"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
 
 
                     <div class="principal">
