@@ -167,6 +167,10 @@
                         Todo el contenido de esta plataforma es creado por una única persona. Si te interesaría convertirte en mi mecenas, puedes hacerlo desde <a href="https://www.patreon.com/bePatron?u=42986499" target="_blank" class="text-decoration-none"><strong>mi cuenta de patreon</strong></a>
                     </div>
 
+
+                    <x-publicidad.articulo1/>
+
+
                     <div class="principal">
 
                         @if ($actual)
