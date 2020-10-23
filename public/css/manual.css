@@ -45,8 +45,9 @@ article > h2{
     
 }
 
-.principal h2 a{
+.principal h2 a, .principal h3 a{
     color: #6C757D;
+    text-decoration: none;
 }
 
 .principal h2 strong{
