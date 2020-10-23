@@ -45,6 +45,10 @@ article > h2{
     
 }
 
+.principal h2 a{
+    color: #6C757D;
+}
+
 .principal h2 strong{
     color: #ff5959;
 }
