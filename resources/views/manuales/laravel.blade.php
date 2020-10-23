@@ -106,6 +106,11 @@
 
     <div class="row mb-4">
         <aside class="col-12 col-md-4 text-secondary mb-4 order-md-2">
+
+            <div class="mb-4">
+                <x-publicidad.cuadrado/>
+            </div>
+
             <div class="card shadow">
                 <div class="card-body">
 
