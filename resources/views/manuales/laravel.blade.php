@@ -107,11 +107,9 @@
     <div class="row mb-4">
         <aside class="col-12 col-md-4 text-secondary mb-4 order-md-2">
 
-            <div class="mb-4">
-                <x-publicidad.cuadrado/>
-            </div>
+            
 
-            <div class="card shadow">
+            <div class="card shadow mb-4">
                 <div class="card-body">
 
                     <h1 class="h3 text-center">LARAVEL</h1>
@@ -152,6 +150,10 @@
                     
 
                 </div>
+            </div>
+
+            <div class="mb-4">
+                <x-publicidad.horizontal/>
             </div>
         </aside>
 
