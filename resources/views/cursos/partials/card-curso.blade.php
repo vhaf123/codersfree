@@ -50,7 +50,7 @@
     
             </ul>
 
-            <p class="text-secondary"><span class="fas fa-users mr-1"></span>({{$curso->users_count + 100}})</p>
+            <p class="text-secondary"><span class="fas fa-users mr-1"></span>({{$curso->users_count + 200}})</p>
         </div>
 
         
