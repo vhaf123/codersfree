@@ -81,7 +81,7 @@
         
                     <p>
                         <i class="fas fa-users"></i>
-                        Matriculados: {{$curso->users_count}}
+                        Matriculados: {{$curso->users_count + 100}}
                     </p>
         
                     <p>
