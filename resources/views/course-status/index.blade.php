@@ -117,17 +117,17 @@
                             </div>
                         </div>
 
-                        <div class="my-4 d-lg-none">
+                        {{-- <div class="my-4 d-lg-none">
                             <x-publicidad.horizontal/>
-                        </div>
+                        </div> --}}
                     </main>
                 </div>
 
                 <aside class="col-12 col-lg-4 px-lg-4 indice">
 
-                    <div class="mb-4 d-none d-lg-block">
+                    {{-- <div class="mb-4 d-none d-lg-block">
                         <x-publicidad.horizontal/>
-                    </div>
+                    </div> --}}
 
 
 
