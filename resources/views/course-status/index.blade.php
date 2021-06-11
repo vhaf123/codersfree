@@ -83,9 +83,9 @@
                         {{-- <p class="" id="">@{{actual.descripcion}}</p> --}}
                         {{-- <div v-html = "actual.descripcion"></div> --}}
                         <div>
-                            <p>🟡 Crea un Ecommerce con Laravel, Livewire, Tailwind y Alpine 👉 <a href="https://bit.ly/3nJbmc3">https://bit.ly/3nJbmc3</a></p>
-                            <p>🔴 Aprende a crear una plataforma de cursos con Laravel 👉 <a href="https://bit.ly/3gW4E1d">https://bit.ly/3gW4E1d</a></p>
-                            <p>🟣 Crea una pasarela de pagos con Laravel Cashier y Stripe 👉 <a href="https://bit.ly/3nJeGnD">https://bit.ly/3nJeGnD</a></p>
+                            <p>🟡 Crea un Ecommerce con Laravel, Livewire, Tailwind y Alpine 👉 <a target="_blank" href="https://bit.ly/3nJbmc3">https://bit.ly/3nJbmc3</a></p>
+                            <p>🔴 Aprende a crear una plataforma de cursos con Laravel 👉 <a target="_blank" href="https://bit.ly/3gW4E1d">https://bit.ly/3gW4E1d</a></p>
+                            <p>🟣 Crea una pasarela de pagos con Laravel Cashier y Stripe 👉 <a target="_blank" href="https://bit.ly/3nJeGnD">https://bit.ly/3nJeGnD</a></p>
                             <p><strong>DONACIONES:</strong></p>
                             <p>Patreon:&nbsp;<a href="https://www.patreon.com/join/codersfree" target="_blank">https://www.patreon.com/join/codersfree</a></p>
                             <p>PayPal:&nbsp;<a href="https://www.paypal.com/paypalme/CodersFreePeru" target="_blank">https://www.paypal.com/paypalme/CodersFreePeru</a></p>
