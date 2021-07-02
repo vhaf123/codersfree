@@ -83,9 +83,11 @@
                         {{-- <p class="" id="">@{{actual.descripcion}}</p> --}}
                         {{-- <div v-html = "actual.descripcion"></div> --}}
                         <div>
-                            <p>🟡 Crea un Ecommerce con Laravel, Livewire, Tailwind y Alpine 👉 <a target="_blank" href="https://bit.ly/2SR3cn6">https://bit.ly/2SR3cn6</a></p>
-                            <p>🔴 Aprende a crear una plataforma de cursos con Laravel 👉 <a target="_blank" href="https://bit.ly/3wGNmKt">https://bit.ly/3wGNmKt</a></p>
-                            <p>🟣 Crea una pasarela de pagos con Laravel Cashier y Stripe 👉 <a target="_blank" href="https://bit.ly/2UfU0ca">https://bit.ly/2UfU0ca</a></p>
+                            <p class="h1">¡¡¡MIS CURSOS DE UDEMY A 9.99 🤩🤩🤩!!!</p>
+                            <p>🟢 Aprende a crear una API RESTful con Laravel 👉 <a target="_blank" href="https://bit.ly/368pDXZ">https://bit.ly/368pDXZ</a></p>
+                            <p>🟡 Crea un Ecommerce con Laravel, Livewire, Tailwind y Alpine 👉 <a target="_blank" href="https://bit.ly/366qh8b">https://bit.ly/366qh8b</a></p>
+                            <p>🔴 Aprende a crear una plataforma de cursos con Laravel 👉 <a target="_blank" href="https://bit.ly/3Ape7Fm">https://bit.ly/3Ape7Fm</a></p>
+                            <p>🟣 Crea una pasarela de pagos con Laravel Cashier y Stripe 👉 <a target="_blank" href="https://bit.ly/3hrzz3X">https://bit.ly/3hrzz3X</a></p>
                             <p><strong>DONACIONES:</strong></p>
                             <p>Patreon:&nbsp;<a href="https://www.patreon.com/join/codersfree" target="_blank">https://www.patreon.com/join/codersfree</a></p>
                             <p>PayPal:&nbsp;<a href="https://www.paypal.com/paypalme/CodersFreePeru" target="_blank">https://www.paypal.com/paypalme/CodersFreePeru</a></p>
