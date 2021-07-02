@@ -84,7 +84,7 @@
                         {{-- <div v-html = "actual.descripcion"></div> --}}
                         <div>
                             <div class="alert alert-primary" role="alert">
-                                <p>¡¡¡MIS CURSOS DE UDEMY A 9.99 🤩🤩🤩!!!</p>
+                                <b>¡¡¡MIS CURSOS DE UDEMY A 9.99 🤩🤩🤩!!!</b>
                             </div>                         
                             <p>🟢 Aprende a crear una API RESTful con Laravel 👉 <a target="_blank" href="https://bit.ly/368pDXZ">https://bit.ly/368pDXZ</a></p>
                             <p>🟡 Crea un Ecommerce con Laravel, Livewire, Tailwind y Alpine 👉 <a target="_blank" href="https://bit.ly/366qh8b">https://bit.ly/366qh8b</a></p>
