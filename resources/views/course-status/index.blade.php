@@ -83,7 +83,9 @@
                         {{-- <p class="" id="">@{{actual.descripcion}}</p> --}}
                         {{-- <div v-html = "actual.descripcion"></div> --}}
                         <div>
-                            <p class="h3">¡¡¡MIS CURSOS DE UDEMY A 9.99 🤩🤩🤩!!!</p>
+                            <div class="alert alert-primary" role="alert">
+                                <p>¡¡¡MIS CURSOS DE UDEMY A 9.99 🤩🤩🤩!!!</p>
+                            </div>                         
                             <p>🟢 Aprende a crear una API RESTful con Laravel 👉 <a target="_blank" href="https://bit.ly/368pDXZ">https://bit.ly/368pDXZ</a></p>
                             <p>🟡 Crea un Ecommerce con Laravel, Livewire, Tailwind y Alpine 👉 <a target="_blank" href="https://bit.ly/366qh8b">https://bit.ly/366qh8b</a></p>
                             <p>🔴 Aprende a crear una plataforma de cursos con Laravel 👉 <a target="_blank" href="https://bit.ly/3Ape7Fm">https://bit.ly/3Ape7Fm</a></p>
