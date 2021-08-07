@@ -83,18 +83,18 @@
                         {{-- <p class="" id="">@{{actual.descripcion}}</p> --}}
                         {{-- <div v-html = "actual.descripcion"></div> --}}
                         <div>
-                            <div class="alert alert-danger" role="alert">
+                            {{-- <div class="alert alert-danger" role="alert">
                                 <b class="h4">¡¡¡ MIS CURSOS DE UDEMY A 9.99 !!! 🤩🤩🤩</b>
                             </div>
                             <p>🟢 Aprende a crear una API RESTful con Laravel 👉 <a target="_blank" href="https://bit.ly/3xlj4MG">https://bit.ly/3xlj4MG</a></p>
                             <p>🟡 Crea un Ecommerce con Laravel, Livewire, Tailwind y Alpine 👉 <a target="_blank" href="https://bit.ly/2Vec6wa">https://bit.ly/2Vec6wa</a></p>
                             <p>🔴 Aprende a crear una plataforma de cursos con Laravel 👉 <a target="_blank" href="https://bit.ly/3zWdZfA">https://bit.ly/3zWdZfA</a></p>
-                            <p>🟣 Crea una pasarela de pagos con Laravel Cashier y Stripe 👉 <a target="_blank" href="https://bit.ly/3jcBYk6">https://bit.ly/3jcBYk6</a></p>
+                            <p>🟣 Crea una pasarela de pagos con Laravel Cashier y Stripe 👉 <a target="_blank" href="https://bit.ly/3jcBYk6">https://bit.ly/3jcBYk6</a></p> --}}
                             
-                            {{-- <p>🟢 Aprende a crear una API RESTful con Laravel 👉 <a target="_blank" href="https://bit.ly/3wbJG2f">https://bit.ly/3wbJG2f</a></p>
+                            <p>🟢 Aprende a crear una API RESTful con Laravel 👉 <a target="_blank" href="https://bit.ly/3wbJG2f">https://bit.ly/3wbJG2f</a></p>
                             <p>🟡 Crea un Ecommerce con Laravel, Livewire, Tailwind y Alpine 👉 <a target="_blank" href="https://bit.ly/3oks0iv">https://bit.ly/3oks0iv</a></p>
                             <p>🔴 Aprende a crear una plataforma de cursos con Laravel 👉 <a target="_blank" href="https://bit.ly/3w2z4TB">https://bit.ly/3w2z4TB</a></p>
-                            <p>🟣 Crea una pasarela de pagos con Laravel Cashier y Stripe 👉 <a target="_blank" href="https://bit.ly/2SRnxIN">https://bit.ly/2SRnxIN</a></p> --}}
+                            <p>🟣 Crea una pasarela de pagos con Laravel Cashier y Stripe 👉 <a target="_blank" href="https://bit.ly/2SRnxIN">https://bit.ly/2SRnxIN</a></p>
                             
                             <p><strong>DONACIONES:</strong></p>
                             <p>Patreon:&nbsp;<a href="https://www.patreon.com/join/codersfree" target="_blank">https://www.patreon.com/join/codersfree</a></p>
