@@ -84,7 +84,7 @@
                         {{-- <div v-html = "actual.descripcion"></div> --}}
                         <div>
                             <div class="alert alert-danger" role="alert">
-                                <b class="h4">¡¡¡ MIS CURSOS DE UDEMY A 9.99 !!! 🤩🤩🤩</b>
+                                <b class="h4">¡¡¡ MIS CURSOS DE UDEMY A 12.99 !!! 🤩🤩🤩</b>
                             </div>
                             
                             <p>🟢 <a target="_blank" href="https://udemy.codersfree.com/api-RESTful-laravel">https://udemy.codersfree.com/api-RESTful-laravel</a></p>
